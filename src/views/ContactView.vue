@@ -1,12 +1,58 @@
 <template>
   <section class="contact-section">
     <div class="container">
+      <h1 class="section-title" data-aos="fade-up">Hablemos</h1>
+      <p class="contact-intro" data-aos="fade-up" data-aos-delay="100">
+        ¿Tienes una idea, un proyecto en mente o simplemente quieres saludar?
+        ¡No dudes en contactarme! Estoy siempre abierto a nuevas oportunidades y
+        colaboraciones interesantes.
+      </p>
+
       <div class="contact-grid">
-        <div
-          class="contact-info"
-          data-aos="fade-right"
-          data-aos-delay="200"
-        ></div>
+        <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
+          <h3>Información de Contacto</h3>
+          <ul>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:juan.dev1809@gmail.com">juan.dev1809@gmail.com</a>
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <a href="tel:+573219177602">+57 321 917 7602</a>
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Soacha, Cundinamarca, Colombia</span>
+            </li>
+          </ul>
+
+          <div class="social-links">
+            <a
+              href="https://www.linkedin.com/in/juan-david-gomez-84a47b25a/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://github.com/JuanDGomezR"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="http://wa.me/573219177602"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-icon"
+            >
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
 
         <div class="contact-form" data-aos="fade-left" data-aos-delay="300">
           <h3>Envíame un Mensaje</h3>
