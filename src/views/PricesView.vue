@@ -5,17 +5,42 @@
         Nuestros Servicios y Precios
       </h1>
       <p class="prices-intro" data-aos="fade-up" data-aos-delay="100">
-        Explora nuestros paquetes diseñados para impulsar tus proyectos.
+        Explora nuestros paquetes diseñados para impulsar tus proyectos y
+        soluciones tecnológicas.<br />
+        Todos los precios están en <strong>USD</strong> con una referencia
+        aproximada en <strong>Pesos Colombianos (COP)</strong>, sujetos a la
+        variación del mercado.
       </p>
+
+      <div class="discounts-info" data-aos="fade-up" data-aos-delay="150">
+        <p>
+          🌟 **¡Ofertas Especiales!** Puedes aplicar descuentos significativos
+          por la contratación de combos de servicios o por pagos anticipados.
+          Contáctanos para más detalles sobre cómo optimizar tu inversión.
+        </p>
+        <p class="payment-methods-text">
+          Facilitamos tus pagos a través de:
+          <span class="payment-icons">
+            <i class="fab fa-paypal"></i>
+            <img src="/img/nequi-logo.png" alt="Nequi" class="nequi-icon" />
+          </span>
+          para tu comodidad.
+        </p>
+      </div>
 
       <div class="prices-grid">
         <div class="price-card" data-aos="fade-up" data-aos-delay="200">
           <h3>Plan Esencial</h3>
-          <p class="prices-intro" data-aos="fade-up" data-aos-delay="100">
+          <p class="plan-description">
             Ideal para emprendedores que necesitan una presencia online rápida y
             simple.
           </p>
-          <p class="price">$150 USD</p>
+          <div class="price-display">
+            <p class="price-usd">$150 USD</p>
+            <p class="price-cop">
+              ~ {{ formatCurrency(convertUsdToCop(150)) }} COP
+            </p>
+          </div>
           <ul>
             <li>
               <i class="fas fa-check"></i> Diseño responsive (PC, móvil, tablet)
@@ -34,13 +59,13 @@
           </ul>
           <div class="card-buttons">
             <button
-              @click="openWhatsApp('Paquete Básico')"
+              @click="openWhatsApp('Plan Esencial')"
               class="btn btn-whatsapp"
             >
               WhatsApp <i class="fab fa-whatsapp"></i>
             </button>
             <button
-              @click="openEmailModal('Paquete Básico')"
+              @click="openEmailModal('Plan Esencial')"
               class="btn btn-email"
             >
               Correo <i class="fas fa-envelope"></i>
@@ -54,16 +79,21 @@
           data-aos-delay="300"
         >
           <h3>Plan Avanzado</h3>
-          <p class="prices-intro" data-aos="fade-up" data-aos-delay="100">
+          <p class="plan-description">
             Perfecto para marcas personales o pequeñas empresas con más
-            contenido.
+            contenido y funcionalidad.
           </p>
-          <p class="price">$300 USD</p>
+          <div class="price-display">
+            <p class="price-usd">$300 USD</p>
+            <p class="price-cop">
+              ~ {{ formatCurrency(convertUsdToCop(300)) }} COP
+            </p>
+          </div>
           <ul>
             <li><i class="fas fa-check"></i> Todo lo del Plan Esencial</li>
             <li>
-              <i class="fas fa-check"></i> Hasta 6 secciones/páginas (por
-              ejemplo: Inicio, Nosotros, Servicios, Contacto, Portafolio, etc.)
+              <i class="fas fa-check"></i> Hasta 6 secciones/páginas (ejemplo:
+              Inicio, Nosotros, Servicios, Contacto, Portafolio, etc.)
             </li>
             <li><i class="fas fa-check"></i> Navegación fluida entre vistas</li>
             <li>
@@ -78,13 +108,13 @@
           </ul>
           <div class="card-buttons">
             <button
-              @click="openWhatsApp('Paquete Estándar')"
+              @click="openWhatsApp('Plan Avanzado')"
               class="btn btn-whatsapp"
             >
               WhatsApp <i class="fab fa-whatsapp"></i>
             </button>
             <button
-              @click="openEmailModal('Paquete Estándar')"
+              @click="openEmailModal('Plan Avanzado')"
               class="btn btn-email"
             >
               Correo <i class="fas fa-envelope"></i>
@@ -94,19 +124,24 @@
 
         <div class="price-card" data-aos="fade-up" data-aos-delay="400">
           <h3>Plan Pro a Medida</h3>
-          <p class="prices-intro" data-aos="fade-up" data-aos-delay="100">
+          <p class="plan-description">
             Para quienes quieren algo personalizado y funcional con tecnología
-            moderna.
+            moderna y características avanzadas.
           </p>
-          <p class="price">$500 USD</p>
+          <div class="price-display">
+            <p class="price-usd">$500 USD</p>
+            <p class="price-cop">
+              ~ {{ formatCurrency(convertUsdToCop(500)) }} COP
+            </p>
+          </div>
           <ul>
             <li>
               <i class="fas fa-check"></i> Desarrollo completo desde cero con
               HTML/CSS o Vue/React
             </li>
             <li>
-              <i class="fas fa-check"></i> áginas ilimitadas (dentro del alcance
-              acordado)
+              <i class="fas fa-check"></i> Páginas ilimitadas (dentro del
+              alcance acordado)
             </li>
             <li>
               <i class="fas fa-check"></i> Consumo de APIs (ej: clima, noticias,
@@ -123,13 +158,13 @@
           </ul>
           <div class="card-buttons">
             <button
-              @click="openWhatsApp('Paquete Premium')"
+              @click="openWhatsApp('Plan Pro a Medida')"
               class="btn btn-whatsapp"
             >
               WhatsApp <i class="fab fa-whatsapp"></i>
             </button>
             <button
-              @click="openEmailModal('Paquete Premium')"
+              @click="openEmailModal('Plan Pro a Medida')"
               class="btn btn-email"
             >
               Correo <i class="fas fa-envelope"></i>
@@ -139,13 +174,19 @@
 
         <div class="price-card" data-aos="fade-up" data-aos-delay="500">
           <h3>Soporte Básico (software)</h3>
-          <p class="price">
-            $25 USD / visita (presencial en Bogotá/Soacha) o remota
+          <p class="plan-description">
+            Soluciones rápidas para tus necesidades de software diarias.
           </p>
+          <div class="price-display">
+            <p class="price-usd">$25 USD / visita</p>
+            <p class="price-cop">
+              ~ {{ formatCurrency(convertUsdToCop(25)) }} COP / visita
+            </p>
+          </div>
           <ul>
             <li><i class="fas fa-check"></i> Diagnóstico de problemas</li>
             <li>
-              <i class="fas fa-check"></i> Limpieza de software inncesario
+              <i class="fas fa-check"></i> Limpieza de software innecesario
             </li>
             <li>
               <i class="fas fa-check"></i> Instalación y actualización de
@@ -161,13 +202,13 @@
           </ul>
           <div class="card-buttons">
             <button
-              @click="openWhatsApp('Mantenimiento Básico')"
+              @click="openWhatsApp('Soporte Básico')"
               class="btn btn-whatsapp"
             >
               WhatsApp <i class="fab fa-whatsapp"></i>
             </button>
             <button
-              @click="openEmailModal('Mantenimiento Básico')"
+              @click="openEmailModal('Soporte Básico')"
               class="btn btn-email"
             >
               Correo <i class="fas fa-envelope"></i>
@@ -177,11 +218,18 @@
 
         <div class="price-card" data-aos="fade-up" data-aos-delay="600">
           <h3>Soporte Intermedio</h3>
-          <p class="price">$50 USD / visita</p>
-          <p class="prices-intro" data-aos="fade-up" data-aos-delay="100">
-            Incluye todo lo básico, más:
+          <p class="plan-description">
+            Servicio integral para la configuración y mantenimiento de tu
+            sistema operativo.
           </p>
+          <div class="price-display">
+            <p class="price-usd">$50 USD / visita</p>
+            <p class="price-cop">
+              ~ {{ formatCurrency(convertUsdToCop(50)) }} COP / visita
+            </p>
+          </div>
           <ul>
+            <li><i class="fas fa-check"></i> Todo lo básico, más:</li>
             <li>
               <i class="fas fa-check"></i> Instalación de sistema operativo
               (Windows)
@@ -198,13 +246,13 @@
           </ul>
           <div class="card-buttons">
             <button
-              @click="openWhatsApp('Mantenimiento Profesional')"
+              @click="openWhatsApp('Soporte Intermedio')"
               class="btn btn-whatsapp"
             >
               WhatsApp <i class="fab fa-whatsapp"></i>
             </button>
             <button
-              @click="openEmailModal('Mantenimiento Profesional')"
+              @click="openEmailModal('Soporte Intermedio')"
               class="btn btn-email"
             >
               Correo <i class="fas fa-envelope"></i>
@@ -214,11 +262,17 @@
 
         <div class="price-card" data-aos="fade-up" data-aos-delay="700">
           <h3>Soporte Premium (bajo disponibilidad)</h3>
-          <p class="price">$90 USD / visita</p>
-          <p class="prices-intro" data-aos="fade-up" data-aos-delay="100">
-            Incluye todo lo básico, más:
+          <p class="plan-description">
+            Asesoría experta y configuración avanzada para usuarios exigentes.
           </p>
+          <div class="price-display">
+            <p class="price-usd">$90 USD / visita</p>
+            <p class="price-cop">
+              ~ {{ formatCurrency(convertUsdToCop(90)) }} COP / visita
+            </p>
+          </div>
           <ul>
+            <li><i class="fas fa-check"></i> Todo lo intermedio, más:</li>
             <li>
               <i class="fas fa-check"></i> Configuración avanzada de software o
               redes locales
@@ -238,19 +292,32 @@
           </ul>
           <div class="card-buttons">
             <button
-              @click="openWhatsApp('Mantenimiento Premium')"
+              @click="openWhatsApp('Soporte Premium')"
               class="btn btn-whatsapp"
             >
               WhatsApp <i class="fab fa-whatsapp"></i>
             </button>
             <button
-              @click="openEmailModal('Mantenimiento Premium')"
+              @click="openEmailModal('Soporte Premium')"
               class="btn btn-email"
             >
               Correo <i class="fas fa-envelope"></i>
             </button>
           </div>
         </div>
+      </div>
+
+      <div class="location-disclaimer" data-aos="fade-up" data-aos-delay="800">
+        <p>
+          <i class="fas fa-map-marker-alt"></i> Los servicios
+          <strong>presenciales</strong> están disponibles exclusivamente en la
+          ciudad de <strong>Bogotá D.C.</strong> y el municipio de
+          <Strong>Soacha</Strong>, Colombia.
+        </p>
+        <p>
+          Para otras ubicaciones, ofrecemos soporte y desarrollo de forma
+          remota.
+        </p>
       </div>
     </div>
 
@@ -265,9 +332,10 @@
 
 <script>
 import EmailModal from "@/components/EmailModal.vue";
+import axios from "axios";
 
 export default {
-  name: "PreciosView",
+  name: "PricesView",
   components: {
     EmailModal,
   },
@@ -276,8 +344,14 @@ export default {
       isEmailModalVisible: false,
       emailSubject: "",
       predefinedEmailMessage: "",
-      whatsappPhoneNumber: "573219177602", // Tu número de WhatsApp sin el '+'
+      whatsappPhoneNumber: "573219177602",
+      exchangeRateUsdToCop: 0, // Mantenemos esto para los cálculos, pero no se muestra directamente
+      // Quitamos isLoadingRate y rateError ya que no se usarán en la UI
     };
+  },
+  mounted() {
+    // Aún cargamos la tasa para que los cálculos en COP sean lo más actual posible
+    this.fetchExchangeRate();
   },
   methods: {
     openWhatsApp(packageName) {
@@ -294,6 +368,48 @@ export default {
       this.predefinedEmailMessage = `Hola, me gustaría saber más sobre el servicio de ${packageName}.`;
       this.isEmailModalVisible = true;
     },
+    async fetchExchangeRate() {
+      // Simplificamos la lógica de la API ya que no hay estados de carga/error visibles
+      try {
+        const response = await axios.get(
+          "https://api.frankfurter.app/latest?from=USD&to=COP"
+        );
+
+        if (response.data && response.data.rates && response.data.rates.COP) {
+          this.exchangeRateUsdToCop = response.data.rates.COP;
+          console.log(
+            "Tasa de cambio USD a COP (Frankfurter):",
+            this.exchangeRateUsdToCop
+          );
+        } else {
+          // Si la respuesta no es la esperada, usamos un valor por defecto
+          console.warn(
+            "Datos de tasa de cambio inesperados. Usando valor por defecto."
+          );
+          this.exchangeRateUsdToCop = 4000; // Valor de respaldo
+        }
+      } catch (error) {
+        console.error("Error al obtener la tasa de cambio:", error);
+        // En caso de error de red o API, usamos el valor de respaldo
+        this.exchangeRateUsdToCop = 4000;
+      }
+    },
+    convertUsdToCop(usdAmount) {
+      // El cálculo sigue siendo dinámico aunque el aviso sea estático
+      return usdAmount * this.exchangeRateUsdToCop;
+    },
+    formatCurrency(amount, currencyCode = "COP") {
+      // Esta función es para las cantidades de los precios, redondeando COP a cero decimales
+      const options = {
+        style: "currency",
+        currency: currencyCode,
+        minimumFractionDigits: 0,
+        maximumFractionDigits: currencyCode === "COP" ? 0 : 2,
+      };
+      const locale = currencyCode === "COP" ? "es-CO" : "en-US";
+      return new Intl.NumberFormat(locale, options).format(amount);
+    },
+    // Se elimina la función formatExchangeRate ya que no se usa para mostrar la tasa directamente
   },
 };
 </script>
@@ -333,8 +449,57 @@ export default {
   font-size: 1.1rem;
   color: $color-gray-text;
   max-width: 800px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 2rem;
   line-height: 1.7;
+  // Añadimos estilos para el texto en negrita dentro del párrafo si no se ven por defecto
+  strong {
+    color: $color-light-text; // Para que resalte un poco más que el texto normal
+    font-weight: bold;
+  }
+}
+
+.discounts-info {
+  background-color: lighten($color-dark-background, 8%);
+  border: 1px solid $color-primary-accent;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  margin: 0 auto 4rem;
+  max-width: 800px;
+  text-align: center;
+  p {
+    font-size: 1rem;
+    color: $color-light-text;
+    margin-bottom: 0.5rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    strong {
+      color: $color-primary-accent;
+    }
+  }
+  .payment-methods-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    .payment-icons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      i {
+        font-size: 1.5em;
+        color: $color-light-text;
+      }
+      .fa-paypal {
+        color: #0070ba;
+      }
+      .nequi-icon {
+        height: 1.5em;
+        vertical-align: middle;
+      }
+    }
+  }
 }
 
 .prices-grid {
@@ -363,9 +528,9 @@ export default {
   &.featured {
     border: 3px solid $color-primary-accent;
     background-color: lighten($color-dark-background, 8%);
-    transform: translateY(-15px) scale(1.02); /* Más destacado */
-    .price {
-      color: $color-primary-accent; // Usando tu color de acento principal para destacar el precio
+    transform: translateY(-15px) scale(1.02);
+    .price-usd {
+      color: $color-primary-accent;
       font-size: 3.2rem;
     }
   }
@@ -377,12 +542,30 @@ export default {
     margin-bottom: 1.5rem;
   }
 
-  .price {
-    font-family: $font-heading;
-    font-size: 2.8rem;
-    color: $color-light-text; // Color por defecto, será cambiado por featured si aplica
+  .plan-description {
+    font-size: 0.95rem;
+    color: $color-gray-text;
     margin-bottom: 1.5rem;
+    min-height: 40px;
+  }
+
+  .price-display {
+    margin-bottom: 1.5rem;
+  }
+
+  .price-usd {
+    font-family: $font-heading;
+    font-size: 2.5rem;
+    color: $color-light-text;
     font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .price-cop {
+    font-family: $font-body;
+    font-size: 1.2rem;
+    color: $color-gray-text;
+    font-weight: normal;
   }
 
   ul {
@@ -390,6 +573,7 @@ export default {
     padding: 0;
     margin-bottom: 2rem;
     text-align: left;
+    flex-grow: 1;
     li {
       font-size: 1rem;
       color: $color-gray-text;
@@ -397,29 +581,27 @@ export default {
       position: relative;
       padding-left: 25px;
       i {
-        // Icono de Font Awesome para el check
         font-size: 1.1rem;
         color: $color-success;
         position: absolute;
         left: 0;
-        top: 3px; // Ajusta si el icono no se alinea bien
+        top: 3px;
       }
     }
   }
   .nota {
-    // Icono de Font Awesome para el check
     font-size: 1.1rem;
     color: $color-error;
     position: absolute;
     left: 0;
-    top: 3px; // Ajusta si el icono no se alinea bien
+    top: 3px;
   }
 
   .card-buttons {
     display: flex;
-    flex-direction: column; // Botones apilados
+    flex-direction: column;
     gap: 1rem;
-    margin-top: auto; // Empuja los botones hacia abajo
+    margin-top: auto;
   }
 
   .btn {
@@ -433,11 +615,11 @@ export default {
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    border: none; // Asegúrate de que no tengan bordes por defecto
+    border: none;
   }
 
   .btn-whatsapp {
-    background-color: #25d366; /* Color de WhatsApp */
+    background-color: #25d366;
     color: white;
     &:hover {
       background-color: darken(#25d366, 10%);
@@ -449,7 +631,7 @@ export default {
   }
 
   .btn-email {
-    background-color: $color-primary-accent; /* Tu color de acento */
+    background-color: $color-primary-accent;
     color: $color-light-text;
     border: 2px solid $color-primary-accent;
     &:hover {
@@ -458,6 +640,31 @@ export default {
     }
     i {
       margin-left: 10px;
+    }
+  }
+}
+
+.location-disclaimer {
+  background-color: lighten($color-dark-background, 5%);
+  border: 1px solid $color-gray-text;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  margin: 4rem auto 2rem;
+  max-width: 800px;
+  text-align: center;
+  p {
+    font-size: 0.95rem;
+    color: $color-gray-text;
+    margin-bottom: 0.5rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    strong {
+      color: $color-light-text;
+    }
+    i {
+      margin-right: 8px;
+      color: $color-primary-accent;
     }
   }
 }
@@ -472,7 +679,7 @@ export default {
     max-width: 400px;
   }
   .price-card.featured {
-    transform: translateY(0) scale(1); // Desactiva el transform para destacado en móvil si es mucho
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -483,17 +690,24 @@ export default {
   .section-title {
     font-size: 2.5rem;
   }
-  .prices-intro {
-    font-size: 1rem;
-    margin-bottom: 3rem;
+  .prices-intro,
+  .discounts-info,
+  .location-disclaimer {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    padding: 1rem 1.5rem;
   }
   .price-card {
     padding: 2rem;
     h3 {
       font-size: 1.8rem;
     }
-    .price {
+    .price-usd {
       font-size: 2.5rem;
+    }
+    .payment-methods-text .payment-icons {
+      flex-direction: row;
+      margin-top: 5px;
     }
   }
 }
