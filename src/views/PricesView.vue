@@ -10,15 +10,18 @@
 
       <div class="prices-grid">
         <div class="price-card" data-aos="fade-up" data-aos-delay="200">
-          <h3>Paquete Básico</h3>
-          <p class="price">$500 USD</p>
+          <h3>Plan Esencial</h3>
+                <p class="prices-intro" data-aos="fade-up" data-aos-delay="100">
+        Ideal para emprendedores que necesitan una presencia online rápida y simple.
+                </p>
+          <p class="price">$150 USD</p>
           <ul>
-            <li><i class="fas fa-check"></i> Diseño Responsivo</li>
-            <li><i class="fas fa-check"></i> Hasta 3 Páginas</li>
+            <li><i class="fas fa-check"></i> Diseño responsive (PC, móvil, tablet)</li>
+            <li><i class="fas fa-check"></i> Hasta 3 secciones o páginas estáticas</li>
             <li>
-              <i class="fas fa-check"></i> Integración de Formulario Básico
+              <i class="fas fa-check"></i> Formulario de contacto funcional (Formspree, Google Forms, etc)
             </li>
-            <li><i class="fas fa-check"></i> Soporte 1 Mes</li>
+            <li><i class="fas fa-check"></i> Página con contenido informativo o de presentación</li>
           </ul>
           <div class="card-buttons">
             <button
@@ -41,19 +44,22 @@
           data-aos="fade-up"
           data-aos-delay="300"
         >
-          <h3>Paquete Estándar</h3>
-          <p class="price">$1200 USD</p>
+          <h3>Plan Avanzado</h3>
+          <p class="prices-intro" data-aos="fade-up" data-aos-delay="100">
+        Perfecto para marcas personales o pequeñas empresas con más contenido.
+                </p>
+          <p class="price">$300 USD</p>
           <ul>
-            <li><i class="fas fa-check"></i> Diseño Personalizado Avanzado</li>
-            <li><i class="fas fa-check"></i> Hasta 8 Páginas</li>
+            <li><i class="fas fa-check"></i> Todo lo del Plan Esencial</li>
+            <li><i class="fas fa-check"></i> Hasta 6 secciones/páginas (por ejemplo: Inicio, Nosotros, Servicios, Contacto, Portafolio, etc.)</li>
             <li>
-              <i class="fas fa-check"></i> Sistema de Gestión de Contenido (CMS)
-              Básico
+              <i class="fas fa-check"></i> Navegación fluida entre vistas
             </li>
             <li>
-              <i class="fas fa-check"></i> Integración de Pasarela de Pago
+              <i class="fas fa-check"></i> Animaciones básicas e interactividad (Vue o JS)
             </li>
-            <li><i class="fas fa-check"></i> Soporte 3 Meses</li>
+            <li><i class="fas fa-check"></i> Hosting básico y publicación en GitHub Pages o Netlify</li>
+            <li><i class="fas fa-check"></i> Soporte 1 mes</li>
           </ul>
           <div class="card-buttons">
             <button
@@ -72,14 +78,17 @@
         </div>
 
         <div class="price-card" data-aos="fade-up" data-aos-delay="400">
-          <h3>Paquete Premium</h3>
-          <p class="price">$2500 USD</p>
+          <h3>Plan Pro a Medida</h3>
+          <p class="prices-intro" data-aos="fade-up" data-aos-delay="100">
+        Para quienes quieren algo personalizado y funcional con tecnología moderna.
+                </p>
+          <p class="price">$500 USD</p>
           <ul>
-            <li><i class="fas fa-check"></i> Desarrollo a Medida</li>
-            <li><i class="fas fa-check"></i> Número de Páginas Ilimitado</li>
-            <li><i class="fas fa-check"></i> CMS Personalizado</li>
-            <li><i class="fas fa-check"></i> Integración de API Compleja</li>
-            <li><i class="fas fa-check"></i> Soporte Prioritario 6 Meses</li>
+            <li><i class="fas fa-check"></i> Desarrollo completo desde cero con HTML/CSS o Vue/React</li>
+            <li><i class="fas fa-check"></i> áginas ilimitadas (dentro del alcance acordado)</li>
+            <li><i class="fas fa-check"></i> Consumo de APIs (ej: clima, noticias, datos públicos, etc.)</li>
+            <li><i class="fas fa-check"></i> Componentes reutilizables, SPA o diseño modular</li>
+            <li><i class="fas fa-check"></i> Soporte técnico personalizado por 2 meses</li>
           </ul>
           <div class="card-buttons">
             <button
@@ -98,18 +107,18 @@
         </div>
 
         <div class="price-card" data-aos="fade-up" data-aos-delay="500">
-          <h3>Mantenimiento Básico</h3>
-          <p class="price">$75 USD / visita</p>
+          <h3>Soporte Básico (software)</h3>
+          <p class="price">$25 USD / visita (presencial en Bogotá/Soacha) o remota</p>
           <ul>
-            <li><i class="fas fa-check"></i> Diagnóstico básico</li>
-            <li><i class="fas fa-check"></i> Limpieza física externa</li>
+            <li><i class="fas fa-check"></i> Diagnóstico de problemas</li>
+            <li><i class="fas fa-check"></i> Limpieza de software inncesario</li>
             <li>
-              <i class="fas fa-check"></i> Optimización de software básica
+              <i class="fas fa-check"></i> Instalación y actualización de programas o drivers
             </li>
             <li>
-              <i class="fas fa-check"></i> Eliminación de archivos temporales
+              <i class="fas fa-check"></i> Optimización básica del sistema
             </li>
-            <li><i class="fas fa-check"></i> Soporte remoto 1 hora</li>
+            <li><i class="fas fa-check"></i> Soporte remoto hasta 1 hora (Opcional)</li>
           </ul>
           <div class="card-buttons">
             <button
@@ -128,34 +137,23 @@
         </div>
 
         <div class="price-card" data-aos="fade-up" data-aos-delay="600">
-          <h3>Mantenimiento Profesional</h3>
-          <p class="price">A Consultar</p>
+          <h3>Soporte Intermedio</h3>
+          <p class="price">$50 USD / visita</p>
+          <p class="prices-intro" data-aos="fade-up" data-aos-delay="100">
+        Incluye todo lo básico, más:
+                </p>
           <ul>
             <li>
-              <i class="fas fa-check"></i> Diagnóstico y reparación de
-              hardware/software
+              <i class="fas fa-check"></i> Instalación de sistema operativo (Windows)
             </li>
             <li>
-              <i class="fas fa-check"></i> Optimización de rendimiento y
-              limpieza de archivos
+              <i class="fas fa-check"></i> Instalación de suites completas (Office, edición básica, etc.)
             </li>
             <li>
-              <i class="fas fa-check"></i> Limpieza física interna y externa de
-              componentes
+              <i class="fas fa-check"></i> Configuración de cuentas, navegadores, impresoras, etc.
             </li>
             <li>
-              <i class="fas fa-check"></i> Actualizaciones de seguridad y
-              sistema operativo
-            </li>
-            <li>
-              <i class="fas fa-check"></i> Instalación y configuración de
-              software
-            </li>
-            <li>
-              <i class="fas fa-check"></i> Soporte técnico remoto y/o presencial
-            </li>
-            <li>
-              <i class="fas fa-check"></i> Asesoría en mejoras y actualizaciones
+              <i class="fas fa-check"></i> Soporte extendido (hasta 2h)
             </li>
           </ul>
           <div class="card-buttons">
@@ -175,31 +173,23 @@
         </div>
 
         <div class="price-card" data-aos="fade-up" data-aos-delay="700">
-          <h3>Mantenimiento Premium</h3>
-          <p class="price">$250 USD / visita</p>
+          <h3>Soporte Premium (bajo disponibilidad)</h3>
+          <p class="price">$90 USD / visita</p>
+          <p class="prices-intro" data-aos="fade-up" data-aos-delay="100">
+        Incluye todo lo básico, más:
+                </p>
           <ul>
             <li>
-              <i class="fas fa-check"></i> Diagnóstico avanzado y reparación
-              profunda
+              <i class="fas fa-check"></i> Configuración avanzada de software o redes locales
+            </li>
+                        <li>
+              <i class="fas fa-check"></i> Asesoría personalizada para uso de software o trabajo remoto
+            </li>
+                        <li>
+              <i class="fas fa-check"></i> Soporte remoto prioritario en los siguientes 7 días
             </li>
             <li>
-              <i class="fas fa-check"></i> Reemplazo de componentes (costo
-              aparte)
-            </li>
-            <li><i class="fas fa-check"></i> Recuperación de datos básica</li>
-            <li>
-              <i class="fas fa-check"></i> Configuración de copias de seguridad
-              automáticas
-            </li>
-            <li>
-              <i class="fas fa-check"></i> Instalación de software especializado
-            </li>
-            <li>
-              <i class="fas fa-check"></i> Soporte técnico prioritario 24/7
-            </li>
-            <li>
-              <i class="fas fa-check"></i> Asesoría estratégica en
-              infraestructura
+              <i class="fas fa-xmark nota"></i> Nota: No incluye cambios o reparación de hardware físico.
             </li>
           </ul>
           <div class="card-buttons">
@@ -371,6 +361,14 @@ export default {
         top: 3px; // Ajusta si el icono no se alinea bien
       }
     }
+  }
+  .nota {
+            // Icono de Font Awesome para el check
+        font-size: 1.1rem;
+        color: $color-error;
+        position: absolute;
+        left: 0;
+        top: 3px; // Ajusta si el icono no se alinea bien
   }
 
   .card-buttons {
