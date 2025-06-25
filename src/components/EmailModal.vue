@@ -5,44 +5,71 @@
         <button class="close-button" @click="closeModal">
           <i class="fas fa-times"></i>
         </button>
-        <h3>Enviar Correo</h3>
+        <h3>Enviar Mensaje Directamente</h3>
         <p class="modal-subtitle">
-          Envíame un mensaje rápido. El asunto y el contenido ya están
-          preestablecidos.
+          Rellena tus datos y envía un mensaje. El asunto y el contenido ya
+          están preestablecidos.
         </p>
 
         <form @submit.prevent="submitForm">
+          <div class="form-group">
+            <label for="modalName">Tu Nombre:</label>
+            <input
+              type="text"
+              id="modalName"
+              v-model="form.userName"
+              placeholder="Tu nombre completo"
+              required
+            />
+          </div>
           <div class="form-group">
             <label for="modalEmail">Tu Email:</label>
             <input
               type="email"
               id="modalEmail"
-              v-model="userEmail"
+              v-model="form.userEmail"
               placeholder="tu@correo.com"
               required
             />
           </div>
+
+          <div class="form-group">
+            <label for="modalPhone"
+              >Tu Número de Teléfono/WhatsApp (con indicativo):</label
+            >
+            <input
+              type="tel"
+              id="modalPhone"
+              v-model="form.userPhone"
+              placeholder="Ej: +57 321 917 7602"
+              required
+            />
+          </div>
+
           <div class="form-group">
             <label for="modalSubject">Asunto:</label>
-            <input type="text" id="modalSubject" :value="subject" readonly />
+            <input
+              type="text"
+              id="modalSubject"
+              v-model="form.subject"
+              readonly
+            />
           </div>
           <div class="form-group">
             <label for="modalMessage">Mensaje:</label>
             <textarea
               id="modalMessage"
-              :value="predefinedMessage"
+              v-model="form.message"
               rows="5"
               readonly
             ></textarea>
           </div>
           <p class="edit-note">
-            Puedes editar el asunto y mensaje después de hacer clic en enviar.
+            Tu mensaje será enviado directamente sin abrir tu cliente de correo.
           </p>
 
           <button type="submit" class="btn btn-primary" :disabled="loading">
-            {{
-              loading ? "Abriendo Correo..." : "Abrir en tu Cliente de Correo"
-            }}
+            {{ loading ? "Enviando..." : "Enviar Mensaje" }}
             <i v-if="!loading" class="fas fa-paper-plane"></i>
             <i v-else class="fas fa-spinner fa-spin"></i>
           </button>
@@ -60,8 +87,10 @@
 </template>
 
 <script>
+// Ya no necesitamos importar VueTelInput ni su CSS
 export default {
   name: "EmailModal",
+  // Ya no necesitamos registrar VueTelInput en components
   props: {
     isVisible: {
       type: Boolean,
@@ -78,47 +107,99 @@ export default {
   },
   data() {
     return {
-      userEmail: "", // Email del usuario que envía el mensaje
+      FORMSPREE_FORM_ID: "meokleyw", // ¡TU ID DE FORMSPREE!
+      form: {
+        userName: "",
+        userEmail: "",
+        userPhone: "", // Campo de texto simple para el número de teléfono
+        subject: this.subject,
+        message: this.predefinedMessage,
+      },
       loading: false,
       successMessage: "",
       errorMessage: "",
+      // Ya no necesitamos phoneError
     };
   },
   watch: {
     isVisible(newValue) {
       if (newValue) {
-        // Reiniciar mensajes y email al abrir el modal
-        this.userEmail = "";
+        // Reiniciar mensajes y formulario al abrir el modal
+        this.form.userName = "";
+        this.form.userEmail = "";
+        this.form.userPhone = ""; // Resetear el número de teléfono
         this.successMessage = "";
         this.errorMessage = "";
+        // Ya no necesitamos resetear phoneError
+        this.form.subject = this.subject;
+        this.form.message = this.predefinedMessage;
       }
+    },
+    subject(newVal) {
+      this.form.subject = newVal;
+    },
+    predefinedMessage(newVal) {
+      this.form.message = newVal;
     },
   },
   methods: {
     closeModal() {
       this.$emit("close");
     },
+    // Ya no necesitamos onPhoneInput
     async submitForm() {
+      // Si el campo de teléfono está vacío, no enviar. El atributo 'required' en el input ya ayuda,
+      // pero una doble verificación aquí no está de más.
+      if (!this.form.userPhone) {
+        this.errorMessage = "Por favor, introduce tu número de teléfono.";
+        return;
+      }
+
       this.loading = true;
       this.successMessage = "";
       this.errorMessage = "";
 
-      // Usar mailto: para abrir el cliente de correo del usuario
-      const mailtoLink = `mailto:juan.dev1809@gmail.com?subject=${encodeURIComponent(this.subject)}&body=${encodeURIComponent(this.predefinedMessage + "\n\nMi correo: " + this.userEmail)}`;
+      const url = `https://formspree.io/f/${this.FORMSPREE_FORM_ID}`;
 
       try {
-        window.location.href = mailtoLink;
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: this.form.userName,
+            _replyto: this.form.userEmail,
+            phone: this.form.userPhone, // Se envía el número tal cual el usuario lo ingresó
+            subject: this.form.subject,
+            message: this.form.message,
+            source: "Modal de Precios (Formulario Simple)",
+          }),
+        });
 
-        this.successMessage =
-          "Tu cliente de correo se ha abierto. ¡Gracias por contactarme!";
-        this.loading = false;
-        setTimeout(() => {
-          this.closeModal();
-        }, 3000);
+        if (response.ok) {
+          this.successMessage =
+            "¡Mensaje enviado con éxito! Pronto me pondré en contacto contigo.";
+          // Limpia el formulario
+          this.form.userName = "";
+          this.form.userEmail = "";
+          this.form.userPhone = "";
+          // Cierra el modal después de un tiempo para que el usuario vea el mensaje de éxito
+          setTimeout(() => {
+            this.closeModal();
+          }, 3000);
+        } else {
+          const data = await response.json();
+          this.errorMessage = data.errors
+            ? data.errors.map((err) => err.message).join(", ")
+            : "Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo.";
+        }
       } catch (error) {
-        console.error("Error al abrir el cliente de correo:", error);
+        console.error("Error al enviar el formulario con Formspree:", error);
         this.errorMessage =
-          "No se pudo abrir el cliente de correo. Por favor, copia la dirección o inténtalo con WhatsApp.";
+          "Hubo un problema de conexión. Por favor, verifica tu internet e inténtalo de nuevo más tarde.";
+      } finally {
         this.loading = false;
       }
     },
@@ -126,8 +207,12 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/styles/_variables.scss";
+
+/* Asegúrate de que no haya estilos específicos de vue-tel-input aquí.
+   Los estilos del formulario general ya manejarán el input de teléfono.
+*/
 
 .modal-fade-enter-active,
 .modal-fade-leave-active {
@@ -149,6 +234,9 @@ export default {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  overflow-y: auto;
+  padding: 20px 0;
+  box-sizing: border-box;
 }
 
 .modal-container {
@@ -157,25 +245,83 @@ export default {
   border-radius: 10px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
   width: 90%;
-  max-width: 500px;
+  max-width: 550px;
+  max-height: 95vh;
+  overflow-y: auto;
   position: relative;
   color: $color-light-text;
   text-align: left;
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .modal-container {
+    padding: 1.5rem;
+    width: 95%;
+    max-width: 95vw;
+    margin: 10px auto;
+  }
 
   h3 {
-    font-family: $font-heading;
-    font-size: 1.8rem;
-    color: $color-primary-accent;
-    margin-bottom: 1rem;
-    text-align: center;
+    font-size: 1.6rem;
+  }
+
+  .modal-subtitle,
+  .edit-note,
+  .message {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-container {
+    padding: 1rem;
+    width: 98%;
+    max-width: 98vw;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    line-height: 1.2;
   }
 
   .modal-subtitle {
-    font-size: 0.95rem;
-    color: $color-gray-text;
-    text-align: center;
-    margin-bottom: 2rem;
+    font-size: 0.85rem;
   }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  input[type="email"],
+  input[type="text"],
+  textarea {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .btn-primary {
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+h3 {
+  font-family: $font-heading;
+  font-size: 1.8rem;
+  color: $color-primary-accent;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.modal-subtitle {
+  font-size: 0.95rem;
+  color: $color-gray-text;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .close-button {
@@ -203,6 +349,7 @@ export default {
   }
   input[type="email"],
   input[type="text"],
+  input[type="tel"], /* Asegúrate de que los estilos se apliquen al input type="tel" */
   textarea {
     width: 100%;
     padding: 0.8rem;
@@ -235,7 +382,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px; // Espacio entre texto e icono
+  gap: 8px;
 }
 
 .btn-primary:disabled {
@@ -264,5 +411,12 @@ export default {
   background-color: lighten($color-error, 30%);
   color: darken($color-error, 15%);
   border: 1px solid $color-error;
+}
+
+.error-message-small {
+  color: $color-error;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  text-align: center;
 }
 </style>

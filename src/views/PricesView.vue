@@ -96,6 +96,127 @@
             </button>
           </div>
         </div>
+
+        <div class="price-card" data-aos="fade-up" data-aos-delay="500">
+          <h3>Mantenimiento Básico</h3>
+          <p class="price">$75 USD / visita</p>
+          <ul>
+            <li><i class="fas fa-check"></i> Diagnóstico básico</li>
+            <li><i class="fas fa-check"></i> Limpieza física externa</li>
+            <li>
+              <i class="fas fa-check"></i> Optimización de software básica
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Eliminación de archivos temporales
+            </li>
+            <li><i class="fas fa-check"></i> Soporte remoto 1 hora</li>
+          </ul>
+          <div class="card-buttons">
+            <button
+              @click="openWhatsApp('Mantenimiento Básico')"
+              class="btn btn-whatsapp"
+            >
+              WhatsApp <i class="fab fa-whatsapp"></i>
+            </button>
+            <button
+              @click="openEmailModal('Mantenimiento Básico')"
+              class="btn btn-email"
+            >
+              Correo <i class="fas fa-envelope"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="price-card" data-aos="fade-up" data-aos-delay="600">
+          <h3>Mantenimiento Profesional</h3>
+          <p class="price">A Consultar</p>
+          <ul>
+            <li>
+              <i class="fas fa-check"></i> Diagnóstico y reparación de
+              hardware/software
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Optimización de rendimiento y
+              limpieza de archivos
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Limpieza física interna y externa de
+              componentes
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Actualizaciones de seguridad y
+              sistema operativo
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Instalación y configuración de
+              software
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Soporte técnico remoto y/o presencial
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Asesoría en mejoras y actualizaciones
+            </li>
+          </ul>
+          <div class="card-buttons">
+            <button
+              @click="openWhatsApp('Mantenimiento Profesional')"
+              class="btn btn-whatsapp"
+            >
+              WhatsApp <i class="fab fa-whatsapp"></i>
+            </button>
+            <button
+              @click="openEmailModal('Mantenimiento Profesional')"
+              class="btn btn-email"
+            >
+              Correo <i class="fas fa-envelope"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="price-card" data-aos="fade-up" data-aos-delay="700">
+          <h3>Mantenimiento Premium</h3>
+          <p class="price">$250 USD / visita</p>
+          <ul>
+            <li>
+              <i class="fas fa-check"></i> Diagnóstico avanzado y reparación
+              profunda
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Reemplazo de componentes (costo
+              aparte)
+            </li>
+            <li><i class="fas fa-check"></i> Recuperación de datos básica</li>
+            <li>
+              <i class="fas fa-check"></i> Configuración de copias de seguridad
+              automáticas
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Instalación de software especializado
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Soporte técnico prioritario 24/7
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Asesoría estratégica en
+              infraestructura
+            </li>
+          </ul>
+          <div class="card-buttons">
+            <button
+              @click="openWhatsApp('Mantenimiento Premium')"
+              class="btn btn-whatsapp"
+            >
+              WhatsApp <i class="fab fa-whatsapp"></i>
+            </button>
+            <button
+              @click="openEmailModal('Mantenimiento Premium')"
+              class="btn btn-email"
+            >
+              Correo <i class="fas fa-envelope"></i>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -109,7 +230,7 @@
 </template>
 
 <script>
-import EmailModal from "@/components/EmailModal.vue"; // Importa el nuevo componente modal
+import EmailModal from "@/components/EmailModal.vue";
 
 export default {
   name: "PreciosView",
@@ -127,16 +248,16 @@ export default {
   methods: {
     openWhatsApp(packageName) {
       const message = encodeURIComponent(
-        `Hola, me interesa el ${packageName}. ¿Podrías darme más información?`,
+        `Hola, me interesa el servicio de ${packageName}. ¿Podrías darme más información?`
       );
       window.open(
         `https://wa.me/${this.whatsappPhoneNumber}?text=${message}`,
-        "_blank",
+        "_blank"
       );
     },
     openEmailModal(packageName) {
-      this.emailSubject = `Consulta sobre el ${packageName}`;
-      this.predefinedEmailMessage = `Hola, me gustaría saber más sobre el ${packageName}.`;
+      this.emailSubject = `Consulta sobre ${packageName}`;
+      this.predefinedEmailMessage = `Hola, me gustaría saber más sobre el servicio de ${packageName}.`;
       this.isEmailModalVisible = true;
     },
   },
@@ -195,9 +316,7 @@ export default {
   padding: 2.5rem;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   text-align: center;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -271,9 +390,7 @@ export default {
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;
-    transition:
-      background-color 0.3s ease,
-      transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     border: none; // Asegúrate de que no tengan bordes por defecto
   }
 

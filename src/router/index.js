@@ -46,7 +46,7 @@ const routes = [
     path: "/precios", // ¡NUEVA RUTA!
     name: "prices", // Nombre de la ruta
     component: () =>
-      import(/* webpackChunkName: "prices" */ "../views/PreciosView.vue"), // Importación dinámica
+      import(/* webpackChunkName: "prices" */ "../views/PricesView.vue"), // Importación dinámica
     meta: {
       title: "Precios y Planes | JGSoftworks.dev",
       description:
