@@ -246,9 +246,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition:
-    transform 0.15s ease,
-    box-shadow 0.15s ease; // <--- Esta es la línea clave
+  transition: transform 0.15s ease, box-shadow 0.15s ease; // <--- Esta es la línea clave
 
   i {
     font-size: 3rem;

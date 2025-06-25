@@ -78,9 +78,7 @@ export default {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     transform: translateY(-10px);
@@ -139,9 +137,7 @@ export default {
   margin: 0.5rem;
   border: 2px solid $color-light-text;
   border-radius: 5px;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 
   i {
     margin-left: 8px;

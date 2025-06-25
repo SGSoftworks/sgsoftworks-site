@@ -115,7 +115,7 @@ router.beforeEach((to, from, next) => {
   }
   descriptionMeta.setAttribute(
     "content",
-    to.meta.description || "Portafolio de desarrollador web Full Stack.",
+    to.meta.description || "Portafolio de desarrollador web Full Stack."
   );
 
   // Actualizar la meta keywords (si la usas)
