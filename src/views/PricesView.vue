@@ -11,17 +11,26 @@
       <div class="prices-grid">
         <div class="price-card" data-aos="fade-up" data-aos-delay="200">
           <h3>Plan Esencial</h3>
-                <p class="prices-intro" data-aos="fade-up" data-aos-delay="100">
-        Ideal para emprendedores que necesitan una presencia online rápida y simple.
-                </p>
+          <p class="prices-intro" data-aos="fade-up" data-aos-delay="100">
+            Ideal para emprendedores que necesitan una presencia online rápida y
+            simple.
+          </p>
           <p class="price">$150 USD</p>
           <ul>
-            <li><i class="fas fa-check"></i> Diseño responsive (PC, móvil, tablet)</li>
-            <li><i class="fas fa-check"></i> Hasta 3 secciones o páginas estáticas</li>
             <li>
-              <i class="fas fa-check"></i> Formulario de contacto funcional (Formspree, Google Forms, etc)
+              <i class="fas fa-check"></i> Diseño responsive (PC, móvil, tablet)
             </li>
-            <li><i class="fas fa-check"></i> Página con contenido informativo o de presentación</li>
+            <li>
+              <i class="fas fa-check"></i> Hasta 3 secciones o páginas estáticas
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Formulario de contacto funcional
+              (Formspree, Google Forms, etc)
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Página con contenido informativo o de
+              presentación
+            </li>
           </ul>
           <div class="card-buttons">
             <button
@@ -46,19 +55,25 @@
         >
           <h3>Plan Avanzado</h3>
           <p class="prices-intro" data-aos="fade-up" data-aos-delay="100">
-        Perfecto para marcas personales o pequeñas empresas con más contenido.
-                </p>
+            Perfecto para marcas personales o pequeñas empresas con más
+            contenido.
+          </p>
           <p class="price">$300 USD</p>
           <ul>
             <li><i class="fas fa-check"></i> Todo lo del Plan Esencial</li>
-            <li><i class="fas fa-check"></i> Hasta 6 secciones/páginas (por ejemplo: Inicio, Nosotros, Servicios, Contacto, Portafolio, etc.)</li>
             <li>
-              <i class="fas fa-check"></i> Navegación fluida entre vistas
+              <i class="fas fa-check"></i> Hasta 6 secciones/páginas (por
+              ejemplo: Inicio, Nosotros, Servicios, Contacto, Portafolio, etc.)
+            </li>
+            <li><i class="fas fa-check"></i> Navegación fluida entre vistas</li>
+            <li>
+              <i class="fas fa-check"></i> Animaciones básicas e interactividad
+              (Vue o JS)
             </li>
             <li>
-              <i class="fas fa-check"></i> Animaciones básicas e interactividad (Vue o JS)
+              <i class="fas fa-check"></i> Hosting básico y publicación en
+              GitHub Pages o Netlify
             </li>
-            <li><i class="fas fa-check"></i> Hosting básico y publicación en GitHub Pages o Netlify</li>
             <li><i class="fas fa-check"></i> Soporte 1 mes</li>
           </ul>
           <div class="card-buttons">
@@ -80,15 +95,31 @@
         <div class="price-card" data-aos="fade-up" data-aos-delay="400">
           <h3>Plan Pro a Medida</h3>
           <p class="prices-intro" data-aos="fade-up" data-aos-delay="100">
-        Para quienes quieren algo personalizado y funcional con tecnología moderna.
-                </p>
+            Para quienes quieren algo personalizado y funcional con tecnología
+            moderna.
+          </p>
           <p class="price">$500 USD</p>
           <ul>
-            <li><i class="fas fa-check"></i> Desarrollo completo desde cero con HTML/CSS o Vue/React</li>
-            <li><i class="fas fa-check"></i> áginas ilimitadas (dentro del alcance acordado)</li>
-            <li><i class="fas fa-check"></i> Consumo de APIs (ej: clima, noticias, datos públicos, etc.)</li>
-            <li><i class="fas fa-check"></i> Componentes reutilizables, SPA o diseño modular</li>
-            <li><i class="fas fa-check"></i> Soporte técnico personalizado por 2 meses</li>
+            <li>
+              <i class="fas fa-check"></i> Desarrollo completo desde cero con
+              HTML/CSS o Vue/React
+            </li>
+            <li>
+              <i class="fas fa-check"></i> áginas ilimitadas (dentro del alcance
+              acordado)
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Consumo de APIs (ej: clima, noticias,
+              datos públicos, etc.)
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Componentes reutilizables, SPA o
+              diseño modular
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Soporte técnico personalizado por 2
+              meses
+            </li>
           </ul>
           <div class="card-buttons">
             <button
@@ -108,17 +139,25 @@
 
         <div class="price-card" data-aos="fade-up" data-aos-delay="500">
           <h3>Soporte Básico (software)</h3>
-          <p class="price">$25 USD / visita (presencial en Bogotá/Soacha) o remota</p>
+          <p class="price">
+            $25 USD / visita (presencial en Bogotá/Soacha) o remota
+          </p>
           <ul>
             <li><i class="fas fa-check"></i> Diagnóstico de problemas</li>
-            <li><i class="fas fa-check"></i> Limpieza de software inncesario</li>
             <li>
-              <i class="fas fa-check"></i> Instalación y actualización de programas o drivers
+              <i class="fas fa-check"></i> Limpieza de software inncesario
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Instalación y actualización de
+              programas o drivers
             </li>
             <li>
               <i class="fas fa-check"></i> Optimización básica del sistema
             </li>
-            <li><i class="fas fa-check"></i> Soporte remoto hasta 1 hora (Opcional)</li>
+            <li>
+              <i class="fas fa-check"></i> Soporte remoto hasta 1 hora
+              (Opcional)
+            </li>
           </ul>
           <div class="card-buttons">
             <button
@@ -140,21 +179,22 @@
           <h3>Soporte Intermedio</h3>
           <p class="price">$50 USD / visita</p>
           <p class="prices-intro" data-aos="fade-up" data-aos-delay="100">
-        Incluye todo lo básico, más:
-                </p>
+            Incluye todo lo básico, más:
+          </p>
           <ul>
             <li>
-              <i class="fas fa-check"></i> Instalación de sistema operativo (Windows)
+              <i class="fas fa-check"></i> Instalación de sistema operativo
+              (Windows)
             </li>
             <li>
-              <i class="fas fa-check"></i> Instalación de suites completas (Office, edición básica, etc.)
+              <i class="fas fa-check"></i> Instalación de suites completas
+              (Office, edición básica, etc.)
             </li>
             <li>
-              <i class="fas fa-check"></i> Configuración de cuentas, navegadores, impresoras, etc.
+              <i class="fas fa-check"></i> Configuración de cuentas,
+              navegadores, impresoras, etc.
             </li>
-            <li>
-              <i class="fas fa-check"></i> Soporte extendido (hasta 2h)
-            </li>
+            <li><i class="fas fa-check"></i> Soporte extendido (hasta 2h)</li>
           </ul>
           <div class="card-buttons">
             <button
@@ -176,20 +216,24 @@
           <h3>Soporte Premium (bajo disponibilidad)</h3>
           <p class="price">$90 USD / visita</p>
           <p class="prices-intro" data-aos="fade-up" data-aos-delay="100">
-        Incluye todo lo básico, más:
-                </p>
+            Incluye todo lo básico, más:
+          </p>
           <ul>
             <li>
-              <i class="fas fa-check"></i> Configuración avanzada de software o redes locales
-            </li>
-                        <li>
-              <i class="fas fa-check"></i> Asesoría personalizada para uso de software o trabajo remoto
-            </li>
-                        <li>
-              <i class="fas fa-check"></i> Soporte remoto prioritario en los siguientes 7 días
+              <i class="fas fa-check"></i> Configuración avanzada de software o
+              redes locales
             </li>
             <li>
-              <i class="fas fa-xmark nota"></i> Nota: No incluye cambios o reparación de hardware físico.
+              <i class="fas fa-check"></i> Asesoría personalizada para uso de
+              software o trabajo remoto
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Soporte remoto prioritario en los
+              siguientes 7 días
+            </li>
+            <li>
+              <i class="fas fa-xmark nota"></i> Nota: No incluye cambios o
+              reparación de hardware físico.
             </li>
           </ul>
           <div class="card-buttons">
@@ -363,12 +407,12 @@ export default {
     }
   }
   .nota {
-            // Icono de Font Awesome para el check
-        font-size: 1.1rem;
-        color: $color-error;
-        position: absolute;
-        left: 0;
-        top: 3px; // Ajusta si el icono no se alinea bien
+    // Icono de Font Awesome para el check
+    font-size: 1.1rem;
+    color: $color-error;
+    position: absolute;
+    left: 0;
+    top: 3px; // Ajusta si el icono no se alinea bien
   }
 
   .card-buttons {
