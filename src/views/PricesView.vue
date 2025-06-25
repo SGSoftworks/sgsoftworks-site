@@ -11,10 +11,10 @@
           <h3>Paquete Básico</h3>
           <p class="price">$500 USD</p>
           <ul>
-            <li>Diseño Responsivo</li>
-            <li>Hasta 3 Páginas</li>
-            <li>Integración de Formulario Básico</li>
-            <li>Soporte 1 Mes</li>
+            <li><i class="fas fa-check"></i> Diseño Responsivo</li>
+            <li><i class="fas fa-check"></i> Hasta 3 Páginas</li>
+            <li><i class="fas fa-check"></i> Integración de Formulario Básico</li>
+            <li><i class="fas fa-check"></i> Soporte 1 Mes</li>
           </ul>
           <div class="card-buttons">
             <button @click="openWhatsApp('Paquete Básico')" class="btn btn-whatsapp">
@@ -30,11 +30,11 @@
           <h3>Paquete Estándar</h3>
           <p class="price">$1200 USD</p>
           <ul>
-            <li>Diseño Personalizado Avanzado</li>
-            <li>Hasta 8 Páginas</li>
-            <li>Sistema de Gestión de Contenido (CMS) Básico</li>
-            <li>Integración de Pasarela de Pago</li>
-            <li>Soporte 3 Meses</li>
+            <li><i class="fas fa-check"></i> Diseño Personalizado Avanzado</li>
+            <li><i class="fas fa-check"></i> Hasta 8 Páginas</li>
+            <li><i class="fas fa-check"></i> Sistema de Gestión de Contenido (CMS) Básico</li>
+            <li><i class="fas fa-check"></i> Integración de Pasarela de Pago</li>
+            <li><i class="fas fa-check"></i> Soporte 3 Meses</li>
           </ul>
           <div class="card-buttons">
             <button @click="openWhatsApp('Paquete Estándar')" class="btn btn-whatsapp">
@@ -50,11 +50,11 @@
           <h3>Paquete Premium</h3>
           <p class="price">$2500 USD</p>
           <ul>
-            <li>Desarrollo a Medida</li>
-            <li>Número de Páginas Ilimitado</li>
-            <li>CMS Personalizado</li>
-            <li>Integración de API Compleja</li>
-            <li>Soporte Prioritario 6 Meses</li>
+            <li><i class="fas fa-check"></i> Desarrollo a Medida</li>
+            <li><i class="fas fa-check"></i> Número de Páginas Ilimitado</li>
+            <li><i class="fas fa-check"></i> CMS Personalizado</li>
+            <li><i class="fas fa-check"></i> Integración de API Compleja</li>
+            <li><i class="fas fa-check"></i> Soporte Prioritario 6 Meses</li>
           </ul>
           <div class="card-buttons">
             <button @click="openWhatsApp('Paquete Premium')" class="btn btn-whatsapp">
@@ -81,7 +81,7 @@
 import EmailModal from '@/components/EmailModal.vue'; // Importa el nuevo componente modal
 
 export default {
-  name: 'PricesView',
+  name: 'PreciosView',
   components: {
     EmailModal
   },
@@ -90,7 +90,7 @@ export default {
       isEmailModalVisible: false,
       emailSubject: '',
       predefinedEmailMessage: '',
-      whatsappPhoneNumber: '+573219177602', // Tu número de WhatsApp con código de país
+      whatsappPhoneNumber: '573219177602', // Tu número de WhatsApp sin el '+'
     };
   },
   methods: {
@@ -174,7 +174,7 @@ export default {
     background-color: lighten($color-dark-background, 8%);
     transform: translateY(-15px) scale(1.02); /* Más destacado */
     .price {
-        color: $color-primary-accent;
+        color: $color-primary-accent; // Usando tu color de acento principal para destacar el precio
         font-size: 3.2rem;
     }
   }
@@ -189,7 +189,7 @@ export default {
   .price {
     font-family: $font-heading;
     font-size: 2.8rem;
-    color: $color-primary; // Puedes usar tu color primario
+    color: $color-light-text; // Color por defecto, será cambiado por featured si aplica
     margin-bottom: 1.5rem;
     font-weight: bold;
   }
@@ -205,14 +205,12 @@ export default {
       margin-bottom: 0.8rem;
       position: relative;
       padding-left: 25px;
-      &:before {
-        content: "\f00c"; /* Font Awesome check icon */
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        color: $color-success; // Necesitas definir $color-success en _variables.scss
+      i { // Icono de Font Awesome para el check
+        font-size: 1.1rem;
+        color: $color-success;
         position: absolute;
         left: 0;
-        top: 0;
+        top: 3px; // Ajusta si el icono no se alinea bien
       }
     }
   }

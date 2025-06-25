@@ -93,18 +93,13 @@ export default {
       this.errorMessage = '';
 
       // Usar mailto: para abrir el cliente de correo del usuario
-      // El correo del usuario se incluye en el cuerpo para que el remitente lo vea,
-      // no es el 'from' del correo electrónico en sí.
       const mailtoLink = `mailto:juan.dev1809@gmail.com?subject=${encodeURIComponent(this.subject)}&body=${encodeURIComponent(this.predefinedMessage + '\n\nMi correo: ' + this.userEmail)}`;
 
       try {
-        // Intentar abrir el enlace. No hay una forma real de saber si el usuario
-        // realmente envió el correo después de que se abre el cliente.
         window.location.href = mailtoLink;
 
         this.successMessage = 'Tu cliente de correo se ha abierto. ¡Gracias por contactarme!';
         this.loading = false;
-        // Opcional: Cerrar el modal después de un breve retraso
         setTimeout(() => {
           this.closeModal();
         }, 3000);

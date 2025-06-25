@@ -119,7 +119,7 @@ export default {
       form: {
         name: "",
         email: "",
-        phone: "", // ¡NUEVO CAMPO!
+        phone: "",
         subject: "",
         message: "",
       },
