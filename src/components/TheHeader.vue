@@ -19,6 +19,7 @@
               >Proyectos</router-link
             >
           </li>
+           <li><router-link to="/prices" @click="closeNavbar">Precios</router-link></li>
           <li>
             <router-link to="/sobre-mi" @click="closeNav">Sobre Mí</router-link>
           </li>

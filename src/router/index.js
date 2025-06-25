@@ -46,6 +46,17 @@ const routes = [
     },
   },
   {
+    path: '/prices', 
+    name: 'Prices',
+    component: PricesView,
+    meta: {
+      title: 'Servicios y Precios - Juan D. Gomez',
+      description: 'Descubre los paquetes de servicios de desarrollo web frontend ofrecidos por Juan David Gómez, incluyendo precios y características.',
+      keywords: 'precios, servicios, desarrollo web, paquetes, tarifas, costo de desarrollo',
+      ogImage: require('@/assets/logo.png')
+    }
+  },
+  {
     path: "/contacto",
     name: "contact",
     component: () =>
