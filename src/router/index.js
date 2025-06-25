@@ -19,7 +19,6 @@ const routes = [
       description:
         "Portafolio oficial de Juan David, desarrollador web Full Stack especializado en Vue.js, Node.js y bases de datos. ¡Transformo tus ideas en experiencias digitales!",
       // Asegúrate de tener estas imágenes si las usas para Open Graph
-      ogImage: require('@/assets/images/og-home.jpg')
     },
   },
   {
@@ -31,7 +30,6 @@ const routes = [
       title: "Servicios de Desarrollo Web | Frontend, Backend, UI/UX y más",
       description:
         "Descubre los servicios de desarrollo web que ofrezco: desarrollo frontend, backend, diseño UX/UI, PWAs, bases de datos y despliegue. Soluciones a medida para tu proyecto.",
-      ogImage: require('@/assets/images/og-services.jpg')
     },
   },
   {
@@ -43,7 +41,6 @@ const routes = [
       title: "Proyectos - Mi Portafolio Web | Trabajos Destacados",
       description:
         "Explora una selección de mis proyectos más recientes. Ejemplos de desarrollo web frontend y backend, soluciones completas y diseños interactivos.",
-      ogImage: require('@/assets/images/og-projects.jpg')
     },
   },
   {
@@ -55,7 +52,6 @@ const routes = [
       title: "Precios y Planes | JGSoftworks.dev",
       description:
         "Descubre los paquetes de servicios de desarrollo web y precios ofrecidos por JGSoftworks.dev. Soluciones escalables para cada necesidad y presupuesto.",
-      ogImage: require('@/assets/images/og-prices.jpg') // Asegúrate de tener una imagen para esto
     },
   },
   {
@@ -67,7 +63,6 @@ const routes = [
       title: "Sobre Mí | Mi Historia y Habilidades",
       description:
         "Conoce más sobre Juan David, mi trayectoria como desarrollador, mis habilidades en desarrollo frontend y backend, y mi pasión por crear soluciones web innovadoras.",
-      ogImage: require('@/assets/images/og-about.jpg')
     },
   },
   {
@@ -79,7 +74,6 @@ const routes = [
       title: "Contacto - ¡Hablemos de tu Proyecto!",
       description:
         "Ponte en contacto con Juan David para discutir tu próximo proyecto web. Envíame un mensaje y te responderé lo antes posible.",
-      ogImage: require('@/assets/images/og-contact.jpg')
     },
   },
   // Opcional: Ruta para 404
@@ -91,7 +85,6 @@ const routes = [
       title: "Página no encontrada - 404",
       description:
         "Lo sentimos, la página que buscas no existe en este portafolio.",
-      ogImage: require('@/assets/images/og-404.jpg')
     },
   },
 ];
@@ -127,45 +120,45 @@ router.beforeEach((to, from, next) => {
   );
 
   // Actualizar la meta keywords (si la usas)
-  let keywordsMeta = document.querySelector('meta[name="keywords"]');
-  if (!keywordsMeta) {
-    keywordsMeta = document.createElement("meta");
-    keywordsMeta.setAttribute("name", "keywords");
-    document.head.appendChild(keywordsMeta);
-  }
-  keywordsMeta.setAttribute(
-    "content",
-    to.meta.keywords || "desarrollo web, full stack, frontend, backend"
-  ); // Fallback de keywords
+  // let keywordsMeta = document.querySelector('meta[name="keywords"]');
+  // if (!keywordsMeta) {
+  //   keywordsMeta = document.createElement("meta");
+  //   keywordsMeta.setAttribute("name", "keywords");
+  //   document.head.appendChild(keywordsMeta);
+  // }
+  // keywordsMeta.setAttribute(
+  //   "content",
+  //   to.meta.keywords || "desarrollo web, full stack, frontend, backend"
+  // ); // Fallback de keywords
 
   // Actualizar la meta og:image para redes sociales
-  let ogImageMeta = document.querySelector('meta[property="og:image"]');
-  if (!ogImageMeta) {
-    ogImageMeta = document.createElement("meta");
-    ogImageMeta.setAttribute("property", "og:image");
-    document.head.appendChild(ogImageMeta);
-  }
-  ogImageMeta.setAttribute(
-    "content",
-    to.meta.ogImage || require('@/assets/images/og-default.jpg') // Usa una imagen por defecto si no hay una específica
-  );
+  // let ogImageMeta = document.querySelector('meta[property="og:image"]');
+  // if (!ogImageMeta) {
+  //   ogImageMeta = document.createElement("meta");
+  //   ogImageMeta.setAttribute("property", "og:image");
+  //   document.head.appendChild(ogImageMeta);
+  // }
+  // ogImageMeta.setAttribute(
+  //   "content",
+  //   to.meta.ogImage || require('@/assets/images/og-default.jpg') // Usa una imagen por defecto si no hay una específica
+  // );
 
   // Aquí también puedes actualizar og:title, og:description si lo deseas, usando to.meta.title y to.meta.description
-  let ogTitleMeta = document.querySelector('meta[property="og:title"]');
-  if (!ogTitleMeta) {
-    ogTitleMeta = document.createElement('meta');
-    ogTitleMeta.setAttribute('property', 'og:title');
-    document.head.appendChild(ogTitleMeta);
-  }
-  ogTitleMeta.setAttribute('content', to.meta.title || 'Juan David - Portafolio Web');
+  // let ogTitleMeta = document.querySelector('meta[property="og:title"]');
+  // if (!ogTitleMeta) {
+  //   ogTitleMeta = document.createElement('meta');
+  //   ogTitleMeta.setAttribute('property', 'og:title');
+  //   document.head.appendChild(ogTitleMeta);
+  // }
+  // ogTitleMeta.setAttribute('content', to.meta.title || 'Juan David - Portafolio Web');
 
-  let ogDescriptionMeta = document.querySelector('meta[property="og:description"]');
-  if (!ogDescriptionMeta) {
-    ogDescriptionMeta = document.createElement('meta');
-    ogDescriptionMeta.setAttribute('property', 'og:description');
-    document.head.appendChild(ogDescriptionMeta);
-  }
-  ogDescriptionMeta.setAttribute('content', to.meta.description || 'Portafolio de desarrollador web Full Stack.');
+  // let ogDescriptionMeta = document.querySelector('meta[property="og:description"]');
+  // if (!ogDescriptionMeta) {
+  //   ogDescriptionMeta = document.createElement('meta');
+  //   ogDescriptionMeta.setAttribute('property', 'og:description');
+  //   document.head.appendChild(ogDescriptionMeta);
+  // }
+  // ogDescriptionMeta.setAttribute('content', to.meta.description || 'Portafolio de desarrollador web Full Stack.');
 
 
   next(); // Continúa con la navegación
