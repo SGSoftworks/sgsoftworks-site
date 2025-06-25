@@ -8,7 +8,6 @@ import HomeView from "../views/HomeView.vue";
 // import AboutView from "../views/AboutView.vue";
 // import ContactView from "../views/ContactView.vue";
 
-
 const routes = [
   {
     path: "/",
@@ -116,7 +115,7 @@ router.beforeEach((to, from, next) => {
   }
   descriptionMeta.setAttribute(
     "content",
-    to.meta.description || "Portafolio de desarrollador web Full Stack."
+    to.meta.description || "Portafolio de desarrollador web Full Stack.",
   );
 
   // Actualizar la meta keywords (si la usas)
@@ -159,7 +158,6 @@ router.beforeEach((to, from, next) => {
   //   document.head.appendChild(ogDescriptionMeta);
   // }
   // ogDescriptionMeta.setAttribute('content', to.meta.description || 'Portafolio de desarrollador web Full Stack.');
-
 
   next(); // Continúa con la navegación
 });

@@ -19,7 +19,9 @@
               >Proyectos</router-link
             >
           </li>
-          <li><router-link to="/precios" @click="closeNav">Precios</router-link></li>
+          <li>
+            <router-link to="/precios" @click="closeNav">Precios</router-link>
+          </li>
           <li>
             <router-link to="/sobre-mi" @click="closeNav">Sobre Mí</router-link>
           </li>

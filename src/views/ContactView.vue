@@ -273,7 +273,9 @@ export default {
   .social-icon {
     font-size: 2rem;
     color: $color-light-text;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition:
+      color 0.3s ease,
+      transform 0.3s ease;
     &:hover {
       color: $color-primary-accent;
       transform: translateY(-5px);

@@ -1,40 +1,47 @@
 // src/styles/_base.scss
 html {
-    box-sizing: border-box;
-    font-size: $font-size-base;
+  box-sizing: border-box;
+  font-size: $font-size-base;
 }
 
-*, *:before, *:after {
-    box-sizing: inherit;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: $font-body;
-    line-height: 1.6;
-    color: $color-light-text; // Color de texto por defecto
-    background-color: $color-dark-background; // Fondo oscuro por defecto
+  margin: 0;
+  padding: 0;
+  font-family: $font-body;
+  line-height: 1.6;
+  color: $color-light-text; // Color de texto por defecto
+  background-color: $color-dark-background; // Fondo oscuro por defecto
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: $font-heading;
-    color: $color-primary-accent; // Los títulos principales en rojo
-    margin-top: 0;
-    margin-bottom: 0.5em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-heading;
+  color: $color-primary-accent; // Los títulos principales en rojo
+  margin-top: 0;
+  margin-bottom: 0.5em;
 }
 
 p {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 a {
-    color: $color-primary-accent;
-    text-decoration: none;
-    transition: color 0.3s ease; // Suave transición para enlaces
-    &:hover {
-        color: $color-secondary-accent;
-    }
+  color: $color-primary-accent;
+  text-decoration: none;
+  transition: color 0.3s ease; // Suave transición para enlaces
+  &:hover {
+    color: $color-secondary-accent;
+  }
 }
 
 // Puedes añadir más estilos de reset y base aquí

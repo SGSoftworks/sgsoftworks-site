@@ -6,7 +6,10 @@
           <i class="fas fa-times"></i>
         </button>
         <h3>Enviar Correo</h3>
-        <p class="modal-subtitle">Envíame un mensaje rápido. El asunto y el contenido ya están preestablecidos.</p>
+        <p class="modal-subtitle">
+          Envíame un mensaje rápido. El asunto y el contenido ya están
+          preestablecidos.
+        </p>
 
         <form @submit.prevent="submitForm">
           <div class="form-group">
@@ -32,16 +35,24 @@
               readonly
             ></textarea>
           </div>
-          <p class="edit-note">Puedes editar el asunto y mensaje después de hacer clic en enviar.</p>
+          <p class="edit-note">
+            Puedes editar el asunto y mensaje después de hacer clic en enviar.
+          </p>
 
           <button type="submit" class="btn btn-primary" :disabled="loading">
-            {{ loading ? 'Abriendo Correo...' : 'Abrir en tu Cliente de Correo' }}
+            {{
+              loading ? "Abriendo Correo..." : "Abrir en tu Cliente de Correo"
+            }}
             <i v-if="!loading" class="fas fa-paper-plane"></i>
             <i v-else class="fas fa-spinner fa-spin"></i>
           </button>
 
-          <p v-if="successMessage" class="message success-message">{{ successMessage }}</p>
-          <p v-if="errorMessage" class="message error-message">{{ errorMessage }}</p>
+          <p v-if="successMessage" class="message success-message">
+            {{ successMessage }}
+          </p>
+          <p v-if="errorMessage" class="message error-message">
+            {{ errorMessage }}
+          </p>
         </form>
       </div>
     </div>
@@ -50,7 +61,7 @@
 
 <script>
 export default {
-  name: 'EmailModal',
+  name: "EmailModal",
   props: {
     isVisible: {
       type: Boolean,
@@ -58,55 +69,56 @@ export default {
     },
     subject: {
       type: String,
-      default: 'Consulta General desde el Portafolio',
+      default: "Consulta General desde el Portafolio",
     },
     predefinedMessage: {
       type: String,
-      default: 'Hola, me gustaría más información.',
+      default: "Hola, me gustaría más información.",
     },
   },
   data() {
     return {
-      userEmail: '', // Email del usuario que envía el mensaje
+      userEmail: "", // Email del usuario que envía el mensaje
       loading: false,
-      successMessage: '',
-      errorMessage: '',
+      successMessage: "",
+      errorMessage: "",
     };
   },
   watch: {
     isVisible(newValue) {
       if (newValue) {
         // Reiniciar mensajes y email al abrir el modal
-        this.userEmail = '';
-        this.successMessage = '';
-        this.errorMessage = '';
+        this.userEmail = "";
+        this.successMessage = "";
+        this.errorMessage = "";
       }
-    }
+    },
   },
   methods: {
     closeModal() {
-      this.$emit('close');
+      this.$emit("close");
     },
     async submitForm() {
       this.loading = true;
-      this.successMessage = '';
-      this.errorMessage = '';
+      this.successMessage = "";
+      this.errorMessage = "";
 
       // Usar mailto: para abrir el cliente de correo del usuario
-      const mailtoLink = `mailto:juan.dev1809@gmail.com?subject=${encodeURIComponent(this.subject)}&body=${encodeURIComponent(this.predefinedMessage + '\n\nMi correo: ' + this.userEmail)}`;
+      const mailtoLink = `mailto:juan.dev1809@gmail.com?subject=${encodeURIComponent(this.subject)}&body=${encodeURIComponent(this.predefinedMessage + "\n\nMi correo: " + this.userEmail)}`;
 
       try {
         window.location.href = mailtoLink;
 
-        this.successMessage = 'Tu cliente de correo se ha abierto. ¡Gracias por contactarme!';
+        this.successMessage =
+          "Tu cliente de correo se ha abierto. ¡Gracias por contactarme!";
         this.loading = false;
         setTimeout(() => {
           this.closeModal();
         }, 3000);
-
       } catch (error) {
         console.error("Error al abrir el cliente de correo:", error);
-        this.errorMessage = "No se pudo abrir el cliente de correo. Por favor, copia la dirección o inténtalo con WhatsApp.";
+        this.errorMessage =
+          "No se pudo abrir el cliente de correo. Por favor, copia la dirección o inténtalo con WhatsApp.";
         this.loading = false;
       }
     },
@@ -117,10 +129,12 @@ export default {
 <style lang="scss" scoped>
 @import "@/styles/_variables.scss";
 
-.modal-fade-enter-active, .modal-fade-leave-active {
+.modal-fade-enter-active,
+.modal-fade-leave-active {
   transition: opacity 0.3s ease;
 }
-.modal-fade-enter-from, .modal-fade-leave-to {
+.modal-fade-enter-from,
+.modal-fade-leave-to {
   opacity: 0;
 }
 

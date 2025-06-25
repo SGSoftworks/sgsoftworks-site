@@ -44,7 +44,9 @@ export default {
   border-radius: 8px;
   padding: 2rem;
   text-align: center;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; // Añade o asegura esta línea
+  transition:
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out; // Añade o asegura esta línea
   height: 100%;
 
   &:hover {

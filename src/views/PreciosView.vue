@@ -1,7 +1,9 @@
 <template>
   <section class="prices-section">
     <div class="container">
-      <h1 class="section-title" data-aos="fade-up">Nuestros Servicios y Precios</h1>
+      <h1 class="section-title" data-aos="fade-up">
+        Nuestros Servicios y Precios
+      </h1>
       <p class="prices-intro" data-aos="fade-up" data-aos-delay="100">
         Explora nuestros paquetes diseñados para impulsar tus proyectos.
       </p>
@@ -13,34 +15,57 @@
           <ul>
             <li><i class="fas fa-check"></i> Diseño Responsivo</li>
             <li><i class="fas fa-check"></i> Hasta 3 Páginas</li>
-            <li><i class="fas fa-check"></i> Integración de Formulario Básico</li>
+            <li>
+              <i class="fas fa-check"></i> Integración de Formulario Básico
+            </li>
             <li><i class="fas fa-check"></i> Soporte 1 Mes</li>
           </ul>
           <div class="card-buttons">
-            <button @click="openWhatsApp('Paquete Básico')" class="btn btn-whatsapp">
+            <button
+              @click="openWhatsApp('Paquete Básico')"
+              class="btn btn-whatsapp"
+            >
               WhatsApp <i class="fab fa-whatsapp"></i>
             </button>
-            <button @click="openEmailModal('Paquete Básico')" class="btn btn-email">
+            <button
+              @click="openEmailModal('Paquete Básico')"
+              class="btn btn-email"
+            >
               Correo <i class="fas fa-envelope"></i>
             </button>
           </div>
         </div>
 
-        <div class="price-card featured" data-aos="fade-up" data-aos-delay="300">
+        <div
+          class="price-card featured"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
           <h3>Paquete Estándar</h3>
           <p class="price">$1200 USD</p>
           <ul>
             <li><i class="fas fa-check"></i> Diseño Personalizado Avanzado</li>
             <li><i class="fas fa-check"></i> Hasta 8 Páginas</li>
-            <li><i class="fas fa-check"></i> Sistema de Gestión de Contenido (CMS) Básico</li>
-            <li><i class="fas fa-check"></i> Integración de Pasarela de Pago</li>
+            <li>
+              <i class="fas fa-check"></i> Sistema de Gestión de Contenido (CMS)
+              Básico
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Integración de Pasarela de Pago
+            </li>
             <li><i class="fas fa-check"></i> Soporte 3 Meses</li>
           </ul>
           <div class="card-buttons">
-            <button @click="openWhatsApp('Paquete Estándar')" class="btn btn-whatsapp">
+            <button
+              @click="openWhatsApp('Paquete Estándar')"
+              class="btn btn-whatsapp"
+            >
               WhatsApp <i class="fab fa-whatsapp"></i>
             </button>
-            <button @click="openEmailModal('Paquete Estándar')" class="btn btn-email">
+            <button
+              @click="openEmailModal('Paquete Estándar')"
+              class="btn btn-email"
+            >
               Correo <i class="fas fa-envelope"></i>
             </button>
           </div>
@@ -57,10 +82,16 @@
             <li><i class="fas fa-check"></i> Soporte Prioritario 6 Meses</li>
           </ul>
           <div class="card-buttons">
-            <button @click="openWhatsApp('Paquete Premium')" class="btn btn-whatsapp">
+            <button
+              @click="openWhatsApp('Paquete Premium')"
+              class="btn btn-whatsapp"
+            >
               WhatsApp <i class="fab fa-whatsapp"></i>
             </button>
-            <button @click="openEmailModal('Paquete Premium')" class="btn btn-email">
+            <button
+              @click="openEmailModal('Paquete Premium')"
+              class="btn btn-email"
+            >
               Correo <i class="fas fa-envelope"></i>
             </button>
           </div>
@@ -78,25 +109,30 @@
 </template>
 
 <script>
-import EmailModal from '@/components/EmailModal.vue'; // Importa el nuevo componente modal
+import EmailModal from "@/components/EmailModal.vue"; // Importa el nuevo componente modal
 
 export default {
-  name: 'PreciosView',
+  name: "PreciosView",
   components: {
-    EmailModal
+    EmailModal,
   },
   data() {
     return {
       isEmailModalVisible: false,
-      emailSubject: '',
-      predefinedEmailMessage: '',
-      whatsappPhoneNumber: '573219177602', // Tu número de WhatsApp sin el '+'
+      emailSubject: "",
+      predefinedEmailMessage: "",
+      whatsappPhoneNumber: "573219177602", // Tu número de WhatsApp sin el '+'
     };
   },
   methods: {
     openWhatsApp(packageName) {
-      const message = encodeURIComponent(`Hola, me interesa el ${packageName}. ¿Podrías darme más información?`);
-      window.open(`https://wa.me/${this.whatsappPhoneNumber}?text=${message}`, '_blank');
+      const message = encodeURIComponent(
+        `Hola, me interesa el ${packageName}. ¿Podrías darme más información?`,
+      );
+      window.open(
+        `https://wa.me/${this.whatsappPhoneNumber}?text=${message}`,
+        "_blank",
+      );
     },
     openEmailModal(packageName) {
       this.emailSubject = `Consulta sobre el ${packageName}`;
@@ -159,7 +195,9 @@ export default {
   padding: 2.5rem;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -174,8 +212,8 @@ export default {
     background-color: lighten($color-dark-background, 8%);
     transform: translateY(-15px) scale(1.02); /* Más destacado */
     .price {
-        color: $color-primary-accent; // Usando tu color de acento principal para destacar el precio
-        font-size: 3.2rem;
+      color: $color-primary-accent; // Usando tu color de acento principal para destacar el precio
+      font-size: 3.2rem;
     }
   }
 
@@ -205,7 +243,8 @@ export default {
       margin-bottom: 0.8rem;
       position: relative;
       padding-left: 25px;
-      i { // Icono de Font Awesome para el check
+      i {
+        // Icono de Font Awesome para el check
         font-size: 1.1rem;
         color: $color-success;
         position: absolute;
@@ -232,7 +271,9 @@ export default {
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease;
     border: none; // Asegúrate de que no tengan bordes por defecto
   }
 
