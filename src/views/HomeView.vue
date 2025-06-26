@@ -73,8 +73,8 @@
         <ProjectCard
           data-aos="fade-up"
           data-aos-delay="100"
-          title="Psicoloía & Bienestar"
-          description="Una plataforma enfocada a darte asesorías en Psicología."
+          title="Psicología & Bienestar"
+          description="Una plataforma enfocada en servicios de psicología individuales, entidades educativas y empresas."
           :image="require('@/assets/projects-images/project1.webp')"
           :technologies="['HTML', 'Node.js', 'CSS3', 'JavaScript']"
           liveLink="https://psicologiaybienestar.github.io/"
