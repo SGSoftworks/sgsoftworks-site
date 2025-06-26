@@ -178,7 +178,7 @@ export default {
 
 .hero-actions {
   display: flex;
-  gap: 2rem; // Espacio entre los botones
+  gap: 1rem; // Espacio entre los botones
   justify-content: center;
   flex-wrap: wrap; // Para que los botones se envuelvan en móvil
 }
