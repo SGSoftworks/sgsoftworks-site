@@ -16,6 +16,7 @@
             <li><router-link to="/">Inicio</router-link></li>
             <li><router-link to="/servicios">Servicios</router-link></li>
             <li><router-link to="/proyectos">Proyectos</router-link></li>
+            <li><router-link to="/precios">Precios</router-link></li>
             <li><router-link to="/sobre-mi">Sobre Mí</router-link></li>
             <li><router-link to="/contacto">Contacto</router-link></li>
           </ul>
