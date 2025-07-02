@@ -78,7 +78,6 @@
           :image="require('@/assets/projects-images/project1.webp')"
           :technologies="['HTML', 'Node.js', 'CSS3', 'JavaScript']"
           liveLink="https://psicologiaybienestar.github.io/"
-          githubLink="https://github.com/psicologiaybienestar/psicologiaybienestar.github.io"
         />
         <ProjectCard
           data-aos="fade-up"
@@ -97,7 +96,7 @@
           description="Frontend basado en una api propia para la interacción con CRUD"
           :image="require('@/assets/projects-images/project3.jpg')"
           :technologies="['APIRest', 'HTML', 'CSS3', 'JavaScript']"
-          liveLink="https://juandgomezr.github.io/FRONTEND-LAPIBANDA/users.html"
+          liveLink="https://juandgomezr.github.io/FRONTEND-LAPIBANDA/"
           githubLink="https://github.com/JuanDGomezR/FRONTEND-LAPIBANDA"
         />
       </div>
