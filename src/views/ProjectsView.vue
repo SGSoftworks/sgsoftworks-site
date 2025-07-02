@@ -44,7 +44,7 @@
           title="PokéWiki"
           description="Un proyecto sencillo sobre el mundo Pokémon."
           :image="require('@/assets/projects-images/project5.jpg')"
-          :technologies="['HTML', 'CSS', 'JavaScript']"
+          :technologies="['HTML', 'CSS', 'JavaScript', 'APIs']"
           liveLink="https://juandgomezr.github.io/poke-wiki/"
           githubLink="https://github.com/JuanDGomezR/poke-wiki"
         />
