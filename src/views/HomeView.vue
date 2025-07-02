@@ -77,7 +77,7 @@
           description="Una plataforma enfocada en servicios de psicología individuales, entidades educativas y empresas."
           :image="require('@/assets/projects-images/project1.webp')"
           :technologies="['HTML', 'Node.js', 'CSS3', 'JavaScript']"
-          liveLink="https://psicologiaybienestar.github.io/"
+          liveLink="https://psicologiaybienestar.netlify.app/"
         />
         <ProjectCard
           data-aos="fade-up"
