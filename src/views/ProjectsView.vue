@@ -17,7 +17,6 @@
           :image="require('@/assets/projects-images/project1.webp')"
           :technologies="['HTML', 'Node.js', 'CSS3', 'JavaScript']"
           liveLink="https://psicologiaybienestar.github.io/"
-          githubLink="https://github.com/psicologiaybienestar/psicologiaybienestar.github.io"
         />
         <ProjectCard
           data-aos="fade-up"
@@ -36,28 +35,27 @@
           description="Frontend basado en una api propia para la interacción con CRUD"
           :image="require('@/assets/projects-images/project3.jpg')"
           :technologies="['API´s', 'HTML', 'CSS3', 'JavaScript']"
-          liveLink="https://juandgomezr.github.io/FRONTEND-LAPIBANDA/users.html"
+          liveLink="https://juandgomezr.github.io/FRONTEND-LAPIBANDA/"
           githubLink="https://github.com/JuanDGomezR/FRONTEND-LAPIBANDA"
         />
         <ProjectCard
           data-aos="fade-up"
           data-aos-delay="100"
-          title="Pendiente"
-          description="pendiente por publicar."
-          :image="require('@/assets/projects-images/project4.jpg')"
+          title="PokéWiki"
+          description="Un proyecto sencillo sobre el mundo Pokémon."
+          :image="require('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png')"
           :technologies="['HTML', 'CSS', 'JavaScript']"
-          liveLink="https://www.ejemplo-todo.com"
-          githubLink="https://github.com/tu-usuario/todo-app"
+          liveLink="https://juandgomezr.github.io/poke-wiki/"
+          githubLink="https://github.com/JuanDGomezR/poke-wiki"
         />
         <ProjectCard
           data-aos="fade-up"
           data-aos-delay="200"
-          title="Pendiente"
-          description="pendiente por publicar."
+          title="Códigos JS"
+          description="Ejemplos de cuando aprendí a usar JavaScript."
           :image="require('@/assets/projects-images/project5.jpg')"
-          :technologies="['HTML', 'CSS Grid', 'Animation.css']"
-          liveLink="#"
-          githubLink="#"
+          :technologies="['JavaScript']"
+          githubLink="https://github.com/JuanDGomezR/Actividades-JS"
         />
       </div>
     </div>
@@ -74,7 +72,6 @@ export default {
   },
   data() {
     return {
-      // Si quieres implementar filtros en el futuro
       // categories: ['Todos', 'Frontend', 'Backend', 'Fullstack', 'Diseño'],
       // currentCategory: 'Todos',
       // projects: [ /* Tus datos de proyectos aquí */ ]
