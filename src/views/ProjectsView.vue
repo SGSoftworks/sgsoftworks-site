@@ -16,7 +16,7 @@
           description="Una plataforma enfocada en servicios de psicología individuales, entidades educativas y empresas."
           :image="require('@/assets/projects-images/project1.webp')"
           :technologies="['HTML', 'Node.js', 'CSS3', 'JavaScript']"
-          liveLink="https://psicologiaybienestar.github.io/"
+          liveLink="https://psicologiaybienestar.netlify.app/"
         />
         <ProjectCard
           data-aos="fade-up"
@@ -43,7 +43,7 @@
           data-aos-delay="100"
           title="PokéWiki"
           description="Un proyecto sencillo sobre el mundo Pokémon."
-          :image="require('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png')"
+          :image="require('@/assets/projects-images/project5.jpg')"
           :technologies="['HTML', 'CSS', 'JavaScript']"
           liveLink="https://juandgomezr.github.io/poke-wiki/"
           githubLink="https://github.com/JuanDGomezR/poke-wiki"
