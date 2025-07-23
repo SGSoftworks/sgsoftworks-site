@@ -1,20 +1,16 @@
 // src/styles/_variables.scss
-$color-dark-background: #1a1a1a; // Negro profundo para fondos
-$color-light-text: #f0f0f0; // Blanco roto o gris claro para texto general
-$color-primary-accent: #e50914; // Rojo vibrante para acentos (botones, títulos)
-$color-secondary-accent: #b2070c; // Tono de rojo más oscuro para hover/activos
-$color-gray-text: #b0b0b0; // Gris para texto secundario
-$color-border: #333; // Borde sutil en elementos oscuros
+$color-dark-background: #1a1a1a;
+$color-light-text: #f0f0f0;
+$color-primary-accent: #e50914;
+$color-secondary-accent: #b2070c;
+$color-gray-text: #b0b0b0;
+$color-border: #333;
 $color-primary-accent-light: #00ff26;
 $font-body: "Roboto", sans-serif;
 $font-heading: "Montserrat", sans-serif;
 $font-size-base: 16px;
-// NUEVAS VARIABLES PARA MENSAJES
-$color-success: #27ae60; // Un verde para éxito
-$color-error: #e74c3c; // Un rojo para error (puedes usar $color-primary-accent o uno más brillante)
-$color-warning: #f39c12; // Un amarillo/naranja para advertencias (opcional)
-
-// Fuentes
-$font-heading: "Montserrat", sans-serif; // Tu fuente de encabezados
-$font-body: "Open Sans", sans-serif; // Tu fuente de cuerpo
-// Puedes añadir más variables para espaciados, sombras, etc.
+$color-success: #27ae60;
+$color-error: #e74c3c;
+$color-warning: #f39c12;
+$font-heading: "Montserrat", sans-serif;
+$font-body: "Open Sans", sans-serif;
