@@ -8,17 +8,16 @@
 
 <script>
 import TheHeader from "./components/TheHeader.vue";
-import TheFooter from "./components/TheFooter.vue"; // Importa el componente
+import TheFooter from "./components/TheFooter.vue";
 
 export default {
   name: "App",
   components: {
     TheHeader,
-    TheFooter, // Registra el componente
+    TheFooter,
   },
 };
 </script>
 
 <style lang="scss">
-/* Tus estilos globales de Sass importados desde main.js */
 </style>
