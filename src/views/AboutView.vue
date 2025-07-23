@@ -119,7 +119,7 @@ export default {
   text-align: center;
   position: relative;
   display: inline-block;
-  width: 100%; // Para que el after se centre
+  width: 100%;
   &:after {
     content: "";
     display: block;
@@ -133,7 +133,7 @@ export default {
 
 .about-content {
   display: flex;
-  flex-wrap: wrap; // Permite que los elementos se envuelvan en pantallas pequeñas
+  flex-wrap: wrap;
   gap: 3rem;
   align-items: center;
   justify-content: center;
@@ -141,20 +141,20 @@ export default {
 }
 
 .about-image-wrapper {
-  flex: 1; // Permite que ocupe espacio flexible
-  max-width: 400px; // Tamaño máximo de la imagen
+  flex: 1;
+  max-width: 400px;
   text-align: center;
   .profile-image {
     width: 100%;
     height: auto;
-    border-radius: 8px; // Bordes suaves
+    border-radius: 8px;
     box-shadow: 0 8px 20px rgba($color-dark-background, 0.6);
-    border: 3px solid $color-primary-accent; // Borde rojo alrededor de la imagen
+    border: 3px solid $color-primary-accent;
   }
 }
 
 .about-text {
-  flex: 2; // Ocupa más espacio que la imagen
+  flex: 2;
   max-width: 700px;
   font-size: 1.1rem;
   line-height: 1.8;
@@ -162,43 +162,38 @@ export default {
     margin-bottom: 1.5rem;
     color: $color-gray-text;
     span {
-      color: $color-primary-accent; // Palabras clave en rojo
+      color: $color-primary-accent;
       font-weight: bold;
     }
   }
 }
 
 .cta-button {
-  margin-top: 2.5rem; // Espacio superior para separarlo del texto
-  display: inline-flex; // Para alinear el texto y el icono
+  margin-top: 2.5rem;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2.5rem; // Más padding para un botón más grande
-  font-size: 1.2rem; // Fuente más grande
-  border-radius: 50px; // Bordes redondeados para un look moderno
-  background-color: $color-primary-accent; // Un color que resalte, como el acento principal
-  color: $color-light-text; // Texto oscuro para contraste
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  background-color: $color-primary-accent;
+  color: $color-light-text;
   font-weight: bold;
   text-decoration: none;
-  transition: all 0.3s ease; // Transición suave para todos los cambios
-  box-shadow: 0 5px 15px rgba($color-primary-accent, 0.3); // Sombra para profundidad
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba($color-primary-accent, 0.3);
 
   i {
-    margin-left: 10px; // Espacio entre el texto y el icono
-    font-size: 1.3rem; // Icono ligeramente más grande
+    margin-left: 10px;
+    font-size: 1.3rem;
   }
 
   &:hover {
-    background-color: darken(
-      $color-primary-accent,
-      10%
-    ); // Oscurece al pasar el mouse
-    transform: translateY(-3px); // Ligera elevación
-    box-shadow: 0 8px 20px rgba($color-primary-accent, 0.4); // Sombra más pronunciada
+    background-color: darken($color-primary-accent, 10%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba($color-primary-accent, 0.4);
   }
 
-  // Opcional: para darle un efecto de "pulso" o "bounce" al cargar
-  // puedes usar una animación CSS keyframes si quieres algo más llamativo
   @keyframes bounce {
     0%,
     100% {
@@ -208,7 +203,6 @@ export default {
       transform: translateY(-5px);
     }
   }
-  // animation: bounce 2s infinite ease-in-out;
 }
 
 .skills-section {
@@ -220,7 +214,7 @@ export default {
 .section-subtitle {
   font-family: $font-heading;
   font-size: 2.5rem;
-  color: $color-light-text; // Subtítulo en blanco
+  color: $color-light-text;
   margin-bottom: 3rem;
   span {
     color: $color-primary-accent;
@@ -229,10 +223,7 @@ export default {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(120px, 1fr)
-  ); // Grid de habilidades
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1.5rem;
   justify-items: center;
 }
@@ -246,7 +237,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.15s ease, box-shadow 0.15s ease; // <--- Esta es la línea clave
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 
   i {
     font-size: 3rem;
@@ -260,16 +251,14 @@ export default {
   }
 
   &:hover {
-    // Para añadir un zoom sutil además del translateY
-    transform: translateY(-5px) scale(1.03); // Ejemplo: eleva y agranda 3%
+    transform: translateY(-5px) scale(1.03);
     box-shadow: 0 5px 15px rgba($color-primary-accent, 0.2);
   }
 }
 
-/* Media Queries para responsividad */
 @media (max-width: 992px) {
   .about-content {
-    flex-direction: column; // Apila imagen y texto en pantallas medianas
+    flex-direction: column;
     text-align: center;
     .about-image-wrapper {
       margin-bottom: 2rem;

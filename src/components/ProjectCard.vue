@@ -52,17 +52,14 @@ export default {
       required: true,
     },
     technologies: {
-      // Array de strings, ej: ['Vue.js', 'Sass', 'Firebase']
       type: Array,
       default: () => [],
     },
     liveLink: {
-      // URL del proyecto en vivo
       type: String,
       required: true,
     },
     githubLink: {
-      // URL del repositorio de GitHub (opcional)
       type: String,
       default: "",
     },
@@ -87,18 +84,15 @@ export default {
 }
 
 .project-image-wrapper {
-  // Mantén el overflow hidden si quieres que el overlay o zoom se recorten
-  // Pero para que la imagen no se recorte, el `object-fit: contain` es la solución.
-  position: relative; /* Asegura que el overlay se posicione correctamente */
-  height: 200px; /* Mantén esta altura fija para el contenedor de la imagen */
-  overflow: hidden; /* Esto es para que el zoom de la imagen no se salga del wrapper */
+  position: relative;
+  height: 200px;
+  overflow: hidden;
 
   .project-image {
     width: 100%;
-    height: 100%; /* La imagen ocupará el 100% del alto de su wrapper (200px) */
-    // CAMBIO CLAVE AQUÍ:
-    object-fit: contain; // <-- ESTO es lo que evitará el recorte y la deformación
-    background-color: #000; // Opcional: un color de fondo para el wrapper si hay espacios vacíos (letterbox/pillarbox)
+    height: 100%;
+    object-fit: contain;
+    background-color: #000;
     display: block;
     transition: transform 0.4s ease;
   }
@@ -116,7 +110,7 @@ export default {
     align-items: center;
     opacity: 0;
     transition: opacity 0.4s ease;
-    z-index: 2; /* Asegura que el overlay esté encima de la imagen */
+    z-index: 2;
   }
 
   &:hover .project-image {
@@ -187,7 +181,6 @@ export default {
   font-weight: bold;
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
   .project-card {
     margin-bottom: 1.5rem;

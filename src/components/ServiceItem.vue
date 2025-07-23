@@ -28,45 +28,44 @@ export default {
       required: true,
     },
     delay: {
-      // <--- ¡ASEGÚRATE DE QUE ESTA PROP ESTÉ DECLARADA AQUÍ!
-      type: [String, Number], // Puede ser string (si lo pasas como "100") o Number
-      default: 0, // Un valor por defecto por si no se pasa
+      type: [String, Number],
+      default: 0,
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/_variables.scss"; // Importamos las variables de Sass
+@import "@/styles/_variables.scss";
 
 .service-item {
   background-color: lighten($color-dark-background, 5%);
   border-radius: 8px;
   padding: 2rem;
   text-align: center;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; // Añade o asegura esta línea
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   height: 100%;
 
   &:hover {
-    transform: translateY(-10px) scale(1.02); // Combina movimiento vertical y un zoom del 2%
+    transform: translateY(-10px) scale(1.02);
     box-shadow: 0 10px 20px rgba($color-primary-accent, 0.2);
   }
 }
 
 .icon-wrapper {
-  font-size: 3.5rem; // Tamaño del icono
-  color: $color-primary-accent; // Icono en rojo
+  font-size: 3.5rem;
+  color: $color-primary-accent;
   margin-bottom: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80px; // Altura fija para centrar iconos
+  height: 80px;
 }
 
 .service-title {
   font-family: $font-heading;
   font-size: 1.8rem;
-  color: $color-light-text; // Título del servicio en blanco
+  color: $color-light-text;
   margin-bottom: 1rem;
 }
 
@@ -75,8 +74,6 @@ export default {
   color: $color-gray-text;
   line-height: 1.6;
 }
-
-/* Media Queries para responsividad */
 @media (max-width: 768px) {
   .service-item {
     padding: 1.5rem;

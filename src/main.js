@@ -13,7 +13,7 @@ createApp(App).use(router).mount("#app");
 AOS.init({
   offset: 120,
   delay: 0,
-  duration: 600, 
+  duration: 600,
   easing: "ease-out",
   once: true,
   mirror: false,

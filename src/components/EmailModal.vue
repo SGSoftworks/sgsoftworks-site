@@ -87,10 +87,8 @@
 </template>
 
 <script>
-// Ya no necesitamos importar VueTelInput ni su CSS
 export default {
   name: "EmailModal",
-  // Ya no necesitamos registrar VueTelInput en components
   props: {
     isVisible: {
       type: Boolean,
@@ -107,30 +105,27 @@ export default {
   },
   data() {
     return {
-      FORMSPREE_FORM_ID: "meokleyw", // ¡TU ID DE FORMSPREE!
+      FORMSPREE_FORM_ID: "meokleyw",
       form: {
         userName: "",
         userEmail: "",
-        userPhone: "", // Campo de texto simple para el número de teléfono
+        userPhone: "",
         subject: this.subject,
         message: this.predefinedMessage,
       },
       loading: false,
       successMessage: "",
       errorMessage: "",
-      // Ya no necesitamos phoneError
     };
   },
   watch: {
     isVisible(newValue) {
       if (newValue) {
-        // Reiniciar mensajes y formulario al abrir el modal
         this.form.userName = "";
         this.form.userEmail = "";
-        this.form.userPhone = ""; // Resetear el número de teléfono
+        this.form.userPhone = "";
         this.successMessage = "";
         this.errorMessage = "";
-        // Ya no necesitamos resetear phoneError
         this.form.subject = this.subject;
         this.form.message = this.predefinedMessage;
       }
@@ -146,10 +141,7 @@ export default {
     closeModal() {
       this.$emit("close");
     },
-    // Ya no necesitamos onPhoneInput
     async submitForm() {
-      // Si el campo de teléfono está vacío, no enviar. El atributo 'required' en el input ya ayuda,
-      // pero una doble verificación aquí no está de más.
       if (!this.form.userPhone) {
         this.errorMessage = "Por favor, introduce tu número de teléfono.";
         return;
@@ -171,7 +163,7 @@ export default {
           body: JSON.stringify({
             name: this.form.userName,
             _replyto: this.form.userEmail,
-            phone: this.form.userPhone, // Se envía el número tal cual el usuario lo ingresó
+            phone: this.form.userPhone,
             subject: this.form.subject,
             message: this.form.message,
             source: "Modal de Precios (Formulario Simple)",
@@ -181,14 +173,12 @@ export default {
         if (response.ok) {
           this.successMessage =
             "¡Mensaje enviado con éxito! Pronto me pondré en contacto contigo.";
-          // Limpia el formulario
           this.form.userName = "";
           this.form.userEmail = "";
           this.form.userPhone = "";
-          // Cierra el modal después de un tiempo para que el usuario vea el mensaje de éxito
           setTimeout(() => {
             this.closeModal();
-          }, 3000);
+          }, 4000);
         } else {
           const data = await response.json();
           this.errorMessage = data.errors
@@ -209,10 +199,6 @@ export default {
 
 <style lang="scss">
 @import "@/styles/_variables.scss";
-
-/* Asegúrate de que no haya estilos específicos de vue-tel-input aquí.
-   Los estilos del formulario general ya manejarán el input de teléfono.
-*/
 
 .modal-fade-enter-active,
 .modal-fade-leave-active {
@@ -349,7 +335,7 @@ h3 {
   }
   input[type="email"],
   input[type="text"],
-  input[type="tel"], /* Asegúrate de que los estilos se apliquen al input type="tel" */
+  input[type="tel"],
   textarea {
     width: 100%;
     padding: 0.8rem;

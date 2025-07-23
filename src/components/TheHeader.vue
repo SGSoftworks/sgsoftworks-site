@@ -49,15 +49,15 @@ export default {
   name: "TheHeader",
   data() {
     return {
-      isNavOpen: false, // Controla si el menú está abierto o cerrado
+      isNavOpen: false,
     };
   },
   methods: {
     toggleNav() {
-      this.isNavOpen = !this.isNavOpen; // Invierte el estado del menú
+      this.isNavOpen = !this.isNavOpen;
     },
     closeNav() {
-      this.isNavOpen = false; // Cierra el menú (útil al hacer clic en un enlace)
+      this.isNavOpen = false;
     },
   },
 };
@@ -149,12 +149,12 @@ export default {
 }
 
 .menu-toggle {
-  display: none; // Oculto por defecto en desktop
+  display: none;
   background: none;
   border: none;
   cursor: pointer;
   padding: 10px;
-  z-index: 1001; // Asegura que esté por encima del menú desplegado
+  z-index: 1001;
 
   .bar {
     display: block;
@@ -165,55 +165,48 @@ export default {
     transition: all 0.3s ease;
   }
 
-  // Animación del menú hamburguesa a 'X'
   &.open .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
   &.open .bar:nth-child(2) {
-    opacity: 0; // La barra del medio desaparece
+    opacity: 0;
   }
   &.open .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
 
-/* Media queries para responsividad */
 @media (max-width: 768px) {
   .main-nav {
-    // Estilos para el menú móvil
     position: fixed;
     top: 0;
-    right: -100%; // Inicialmente fuera de pantalla
+    right: -100%;
     width: 100%;
     height: 100%;
-    background-color: rgba(
-      $color-dark-background,
-      0.98
-    ); // Fondo oscuro semi-transparente
+    background-color: rgba($color-dark-background, 0.98);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: right 0.4s ease-in-out; // Animación de entrada/salida
-    z-index: 999; // Detrás del botón hamburguesa pero delante del resto
-    padding-top: 60px; // Espacio para que el header no tape el primer link
+    transition: right 0.4s ease-in-out;
+    z-index: 999;
+    padding-top: 60px;
 
     &.nav-open {
-      right: 0; // Despliega el menú
+      right: 0;
     }
 
     ul {
-      flex-direction: column; // Los ítems del menú apilados
-      gap: 25px; // Más espacio entre ellos
+      flex-direction: column;
+      gap: 25px;
       text-align: center;
     }
 
     li a {
-      font-size: 1.8rem; // Enlaces más grandes para fácil clic
+      font-size: 1.8rem;
       padding: 15px 0;
       &:after {
-        // Quitar el underline en móvil si lo deseas, o ajustarlo
-        bottom: 0; // Mover la línea si la mantienes
+        bottom: 0;
       }
       &.router-link-exact-active {
         color: $color-primary-accent;
@@ -222,7 +215,7 @@ export default {
   }
 
   .menu-toggle {
-    display: block; // Mostrar el menú hamburguesa en móvil
+    display: block;
   }
 }
 </style>

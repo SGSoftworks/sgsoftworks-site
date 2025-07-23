@@ -89,21 +89,15 @@ export default {
 @import "@/styles/_variables.scss";
 
 .main-footer {
-  background-color: lighten(
-    $color-dark-background,
-    2%
-  ); // Un poco más claro que el fondo principal
+  background-color: lighten($color-dark-background, 2%);
   color: $color-gray-text;
-  padding: 4rem 2rem 2rem; // Más padding arriba
-  border-top: 1px solid rgba($color-light-text, 0.05); // Línea divisoria sutil
+  padding: 4rem 2rem 2rem;
+  border-top: 1px solid rgba($color-light-text, 0.05);
 }
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(220px, 1fr)
-  ); // Columnas responsivas
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 3rem;
   margin-bottom: 3rem;
 }
@@ -137,7 +131,7 @@ export default {
   h3 {
     font-family: $font-heading;
     font-size: 1.5rem;
-    color: $color-light-text; // Títulos en blanco
+    color: $color-light-text;
     margin-bottom: 1.5rem;
   }
   ul {
@@ -160,7 +154,7 @@ export default {
     display: flex;
     align-items: center;
     i {
-      color: $color-primary-accent; // Iconos en rojo
+      color: $color-primary-accent;
       margin-right: 10px;
       width: 20px;
     }
@@ -193,14 +187,13 @@ export default {
   }
 
   .red-heart {
-    color: $color-primary-accent; // Corazón en rojo
+    color: $color-primary-accent;
   }
 }
 
-/* Media Queries para responsividad */
 @media (max-width: 768px) {
   .footer-content {
-    grid-template-columns: 1fr; // Una columna en móvil
+    grid-template-columns: 1fr;
     text-align: center;
     .footer-brand,
     .footer-nav,

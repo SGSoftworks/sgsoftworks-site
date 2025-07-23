@@ -150,11 +150,10 @@ export default {
         if (response.ok) {
           this.successMessage =
             "¡Mensaje enviado con éxito! Te responderé pronto.";
-          // Limpia el formulario, incluyendo el nuevo campo 'phone'
           this.form = {
             name: "",
             email: "",
-            phone: "", // ¡Limpiado aquí también!
+            phone: "",
             subject: "",
             message: "",
           };
@@ -217,7 +216,7 @@ export default {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr; // Info a la izquierda, formulario a la derecha
+  grid-template-columns: 1fr 2fr;
   gap: 4rem;
   align-items: flex-start;
 }
@@ -250,7 +249,7 @@ export default {
       font-size: 1.5rem;
       color: $color-primary-accent;
       margin-right: 15px;
-      width: 30px; // Alinea los iconos
+      width: 30px;
       text-align: center;
     }
     a {
@@ -269,7 +268,7 @@ export default {
 .social-links {
   display: flex;
   gap: 1.5rem;
-  justify-content: center; // Centra los iconos de redes sociales
+  justify-content: center;
   .social-icon {
     font-size: 2rem;
     color: $color-light-text;
@@ -311,10 +310,9 @@ export default {
   }
 }
 
-/* Media Queries para responsividad */
 @media (max-width: 992px) {
   .contact-grid {
-    grid-template-columns: 1fr; // Una columna en pantallas medianas
+    grid-template-columns: 1fr;
   }
   .contact-info,
   .contact-form {
@@ -342,11 +340,10 @@ export default {
     font-size: 1rem;
   }
   .social-links {
-    justify-content: flex-start; // Los iconos a la izquierda en móvil para seguir el flujo de la lista
+    justify-content: flex-start;
     margin-top: 2rem;
   }
 }
-/* Nuevos estilos para los mensajes de estado */
 .message {
   margin-top: 1.5rem;
   padding: 1rem;

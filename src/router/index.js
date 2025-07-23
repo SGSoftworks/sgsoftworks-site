@@ -15,8 +15,7 @@ const routes = [
   {
     path: "/servicios",
     name: "services",
-    component: () =>
-      import("../views/ServicesView.vue"),
+    component: () => import("../views/ServicesView.vue"),
     meta: {
       title: "Servicios de Desarrollo Web | Frontend, Backend, UI/UX y más",
       description:
@@ -26,8 +25,7 @@ const routes = [
   {
     path: "/proyectos",
     name: "projects",
-    component: () =>
-      import("../views/ProjectsView.vue"),
+    component: () => import("../views/ProjectsView.vue"),
     meta: {
       title: "Proyectos - Mi Portafolio Web | Trabajos Destacados",
       description:
@@ -49,8 +47,7 @@ const routes = [
   {
     path: "/sobre-mi",
     name: "about",
-    component: () =>
-      import("../views/AboutView.vue"),
+    component: () => import("../views/AboutView.vue"),
     meta: {
       title: "Sobre Mí | Mi Historia y Habilidades",
       description:
@@ -60,8 +57,7 @@ const routes = [
   {
     path: "/contacto",
     name: "contact",
-    component: () =>
-      import("../views/ContactView.vue"),
+    component: () => import("../views/ContactView.vue"),
     meta: {
       title: "Contacto - ¡Hablemos de tu Proyecto!",
       description:
