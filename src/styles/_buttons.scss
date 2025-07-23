@@ -11,15 +11,13 @@
   text-decoration: none;
   font-size: 1.1rem;
   border: 2px solid transparent;
-  cursor: pointer; // ASEGURADO
+  cursor: pointer;
   position: relative;
   overflow: hidden;
 
-  // Añadimos estas propiedades para el texto directamente
-  color: inherit; // Asegura que el color del texto se herede por defecto
-  z-index: 2; // Coloca el texto por encima del pseudo-elemento (el brillo)
+  color: inherit;
+  z-index: 2;
 
-  // Pseudo-elemento para el brillo
   &::before {
     content: "";
     position: absolute;
@@ -27,47 +25,42 @@
     left: -75%;
     width: 50%;
     height: 100%;
-    background: rgba($color-light-text, 0.2); // Un brillo ligero
+    background: rgba($color-light-text, 0.2);
     transform: skewX(-20deg);
     transition: transform 0.5s ease-out;
-    z-index: 1; // Este DEBE ser menor que el z-index del texto
+    z-index: 1;
   }
 
   &:hover::before {
     transform: skewX(-20deg) translateX(150%);
   }
-
-  // Contenido interno del botón para asegurar que el texto no se oculte
-  // Si tu texto no está envuelto en un span, no necesitas esto.
-  // Pero si lo está, por ejemplo: <button><span>Texto</span></button>
-  // entonces podrías necesitar:
   span {
     position: relative;
-    z-index: 2; // Asegura que el span esté por encima del pseudo-elemento
+    z-index: 2;
   }
 }
 
 .btn-primary {
   background-color: $color-primary-accent;
-  color: $color-light-text; // Asegura que el color del texto sea claro
+  color: $color-light-text;
   border-color: $color-primary-accent;
 
   &:hover {
     background-color: darken($color-primary-accent, 10%);
     border-color: darken($color-primary-accent, 10%);
     box-shadow: 0 8px 20px rgba($color-primary-accent, 0.6);
-    color: $color-light-text; // Vuelve a asegurar el color al hover
+    color: $color-light-text;
   }
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: $color-primary-accent; // Asegura que el color del texto sea el primario
+  color: $color-primary-accent;
   border-color: $color-primary-accent;
 
   &:hover {
     background-color: $color-primary-accent;
-    color: $color-light-text; // El texto cambia a claro al hover
+    color: $color-light-text;
     box-shadow: 0 8px 20px rgba($color-primary-accent, 0.3);
   }
 }
