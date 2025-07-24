@@ -168,13 +168,13 @@ export default {
   }
 }
 .typed-text {
-  color: $color-secondary-accent;
+  color: $color-primary-accent;
   display: inline-block;
   font-weight: bold;
   letter-spacing: 1px;
   animation: typing 2.2s steps(18, end) 0.5s 1 normal both,
     blink-caret 0.7s step-end infinite;
-  border-right: 2.5px solid $color-primary-accent;
+  border-right: 2.5px solid $color-secondary-accent;
   white-space: nowrap;
   overflow: hidden;
   min-width: 0;
