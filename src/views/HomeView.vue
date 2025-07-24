@@ -71,33 +71,33 @@
       <h2 class="section-title" data-aos="fade-up">Mis Proyectos Destacados</h2>
       <div class="projects-grid">
         <ProjectCard
-          data-aos="fade-up"
+          data-aos="zoom-in-up"
           data-aos-delay="100"
           title="Psicología & Bienestar"
           description="Una plataforma enfocada en servicios de psicología individuales, entidades educativas y empresas."
-          :image="require('@/assets/projects-images/project1.webp')"
+          :image="require('@/assets/projects-images/psicobienestar.webp')"
           :technologies="['HTML', 'Node.js', 'CSS3', 'JavaScript']"
           liveLink="https://psicologiaybienestar.netlify.app/"
         />
         <ProjectCard
-          data-aos="fade-up"
+          data-aos="zoom-in-up"
           data-aos-delay="200"
           title="IARegTech"
           description="Aplicación web para la verificación en cuanto a la ética de la IA (GUIA)"
-          :image="require('@/assets/projects-images/project2.jpg')"
+          :image="require('@/assets/projects-images/iaregtech.webp')"
           :technologies="['MySQL', 'Flask', 'Python', 'CRUD']"
           liveLink="https://juandgomezr.github.io/IARegTech/"
           githubLink="https://github.com/JuanDGomezR/IARegTech"
         />
         <ProjectCard
-          data-aos="fade-up"
+          data-aos="zoom-in-up"
           data-aos-delay="300"
-          title="LAPIBANDA"
-          description="Frontend basado en una api propia para la interacción con CRUD"
-          :image="require('@/assets/projects-images/project3.jpg')"
-          :technologies="['APIRest', 'HTML', 'CSS3', 'JavaScript']"
-          liveLink="https://juandgomezr.github.io/FRONTEND-LAPIBANDA/"
-          githubLink="https://github.com/JuanDGomezR/FRONTEND-LAPIBANDA"
+          title="Noticias Geek"
+          description="Portal web para ver noticias de videojuegos, películas y tecnología de forma sencilla y rápida."
+          :image="require('@/assets/projects-images/geekNews.webp')"
+          :technologies="['HTML', 'CSS', 'JavaScript', 'APIs']"
+          liveLink="https://juandgomezr.github.io/noticiasgeek/"
+          githubLink="https://github.com/JuanDGomezR/noticiasgeek"
         />
       </div>
       <div class="view-all-projects" data-aos="fade-up" data-aos-delay="400">

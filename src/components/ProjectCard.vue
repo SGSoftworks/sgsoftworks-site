@@ -1,13 +1,20 @@
 <template>
   <div class="project-card">
     <div class="project-image-wrapper">
-      <img :src="image" :alt="title" class="project-image" />
+      <img
+        :src="image"
+        :alt="`Imagen del proyecto ${title}`"
+        class="project-image"
+      />
       <div class="image-overlay">
         <a
+          v-if="liveLink"
           :href="liveLink"
           target="_blank"
           rel="noopener noreferrer"
           class="overlay-link"
+          :aria-label="`Ver proyecto ${title} en vivo`"
+          role="link"
         >
           Ver Proyecto <i class="fas fa-external-link-alt"></i>
         </a>
@@ -17,6 +24,8 @@
           target="_blank"
           rel="noopener noreferrer"
           class="overlay-link"
+          :aria-label="`Ver código fuente de ${title} en GitHub`"
+          role="link"
         >
           GitHub <i class="fab fa-github"></i>
         </a>
@@ -47,7 +56,6 @@ export default {
       required: true,
     },
     image: {
-      // Ruta a la imagen del proyecto, ej: require('@/assets/project1.jpg')
       type: String,
       required: true,
     },
@@ -57,7 +65,7 @@ export default {
     },
     liveLink: {
       type: String,
-      required: true,
+      default: "",
     },
     githubLink: {
       type: String,
@@ -75,11 +83,11 @@ export default {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
+  transition: transform 0.4s cubic-bezier(0.4, 0.2, 0.2, 1),
+    box-shadow 0.4s cubic-bezier(0.4, 0.2, 0.2, 1);
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 25px rgba($color-primary-accent, 0.3);
+    transform: translateY(-14px) scale(1.035);
+    box-shadow: 0 16px 32px rgba($color-primary-accent, 0.22);
   }
 }
 
@@ -87,7 +95,6 @@ export default {
   position: relative;
   height: 200px;
   overflow: hidden;
-
   .project-image {
     width: 100%;
     height: 100%;
@@ -96,7 +103,6 @@ export default {
     display: block;
     transition: transform 0.4s ease;
   }
-
   .image-overlay {
     position: absolute;
     top: 0;
@@ -112,11 +118,9 @@ export default {
     transition: opacity 0.4s ease;
     z-index: 2;
   }
-
   &:hover .project-image {
     transform: scale(1.08);
   }
-
   &:hover .image-overlay {
     opacity: 1;
   }
@@ -132,11 +136,9 @@ export default {
   border: 2px solid $color-light-text;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
-
   i {
     margin-left: 8px;
   }
-
   &:hover {
     background-color: $color-light-text;
     color: $color-primary-accent;
@@ -170,6 +172,8 @@ export default {
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 1rem;
+  justify-content: center;
+  width: 100%;
 }
 
 .tech-tag {
