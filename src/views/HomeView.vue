@@ -166,39 +166,40 @@ export default {
   .highlight {
     color: $color-primary-accent; // El acento (coma o una parte del título) en rojo
   }
-}
-.typed-text {
-  color: $color-primary-accent;
-  display: inline-block;
-  font-weight: bold;
-  letter-spacing: 1px;
-  animation: typing 2.2s steps(18, end) 0.5s 1 normal both,
-    blink-caret 0.7s step-end infinite;
-  border-right: 2.5px solid $color-secondary-accent;
-  white-space: nowrap;
-  overflow: hidden;
-  min-width: 0;
-  width: auto;
-  max-width: 100vw;
-  box-sizing: border-box;
-}
-@keyframes typing {
-  from {
-    width: 0;
+  .typed-text {
+    color: $color-primary-accent;
+    display: inline-block;
+    font-weight: bold;
+    letter-spacing: 1px;
+    animation: typing 2.2s steps(18, end) 0.5s 1 normal both,
+      blink-caret 0.7s step-end infinite;
+    border-right: 2.5px solid $color-secondary-accent;
+    white-space: nowrap;
+    overflow: hidden;
+    min-width: 0;
+    width: auto;
+    max-width: 100vw;
+    box-sizing: border-box;
   }
-  to {
-    width: 100%;
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  @keyframes blink-caret {
+    0%,
+    100% {
+      border-color: transparent;
+    }
+    50% {
+      border-color: $color-light-text;
+    }
   }
 }
-@keyframes blink-caret {
-  0%,
-  100% {
-    border-color: transparent;
-  }
-  50% {
-    border-color: $color-primary-accent;
-  }
-}
+
 .hero-tagline {
   font-size: 1.8rem;
   color: $color-gray-text;
