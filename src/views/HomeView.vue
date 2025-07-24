@@ -6,7 +6,7 @@
         <span>Juan David</span>
         <span class="highlight">,</span>
         <br />
-        Desarrollador Web.
+        <span class="typed-text">Desarrollador Web</span>
       </h1>
       <p class="hero-tagline" data-aos="fade-up" data-aos-delay="300">
         Convirtiendo ideas en experiencias digitales excepcionales.
@@ -167,7 +167,38 @@ export default {
     color: $color-primary-accent; // El acento (coma o una parte del título) en rojo
   }
 }
-
+  .typed-text {
+    color: $color-secondary-accent;
+    display: inline-block;
+    font-weight: bold;
+    letter-spacing: 1px;
+    animation: typing 2.2s steps(18, end) 0.5s 1 normal both,
+      blink-caret 0.7s step-end infinite;
+    border-right: 2.5px solid $color-primary-accent;
+    white-space: nowrap;
+    overflow: hidden;
+    min-width: 0;
+    width: auto;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  @keyframes blink-caret {
+    0%,
+    100% {
+      border-color: transparent;
+    }
+    50% {
+      border-color: $color-primary-accent;
+    }
+  }
 .hero-tagline {
   font-size: 1.8rem;
   color: $color-gray-text;
