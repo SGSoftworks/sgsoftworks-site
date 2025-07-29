@@ -285,10 +285,7 @@ export default {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(300px, 1fr)
-  );
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 3rem;
 }
 
@@ -321,10 +318,7 @@ export default {
 
 .projects-section {
   padding: 6rem 2rem;
-  background-color: darken(
-    $color-dark-background,
-    2%
-  );
+  background-color: darken($color-dark-background, 2%);
   text-align: center;
   border-top: 1px solid rgba($color-light-text, 0.1);
 }
@@ -350,10 +344,7 @@ export default {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(320px, 1fr)
-  );
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 3rem;
   margin-bottom: 4rem;
 }

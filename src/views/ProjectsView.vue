@@ -204,8 +204,7 @@ export default {
         this.closeDropdown();
       }
     },
-    onTechnologyChange() {
-    },
+    onTechnologyChange() {},
     clearFilters() {
       this.currentTechnologies = [];
       this.closeDropdown();

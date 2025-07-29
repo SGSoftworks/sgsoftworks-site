@@ -382,7 +382,7 @@ export default {
           console.warn(
             "Datos de tasa de cambio inesperados. Usando valor por defecto."
           );
-          this.exchangeRateUsdToCop = 4000; 
+          this.exchangeRateUsdToCop = 4000;
         }
       } catch (error) {
         console.error("Error al obtener la tasa de cambio:", error);

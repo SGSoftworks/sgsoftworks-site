@@ -16,9 +16,7 @@ export default {
 .not-found {
   text-align: center;
   padding: 50px;
-  min-height: calc(
-    100vh - 120px
-  );
+  min-height: calc(100vh - 120px);
   display: flex;
   flex-direction: column;
   justify-content: center;

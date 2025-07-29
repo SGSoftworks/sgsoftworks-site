@@ -73,7 +73,7 @@ import ServiceItem from "@/components/ServiceItem.vue";
 export default {
   name: "ServicesView",
   components: {
-    ServiceItem, 
+    ServiceItem,
   },
 };
 </script>
