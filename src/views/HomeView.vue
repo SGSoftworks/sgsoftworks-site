@@ -111,13 +111,13 @@
 
 <script>
 import ServiceItem from "@/components/ServiceItem.vue";
-import ProjectCard from "@/components/ProjectCard.vue"; // Importa el componente ProjectCard
+import ProjectCard from "@/components/ProjectCard.vue";
 
 export default {
   name: "HomeView",
   components: {
     ServiceItem,
-    ProjectCard, // Registra el componente
+    ProjectCard,
   },
 };
 </script>
@@ -125,9 +125,8 @@ export default {
 <style lang="scss" scoped>
 @import "@/styles/_variables.scss";
 
-/* ESTILOS DE LA SECCIÓN HERO (NO CAMBIAN) */
 .hero-section {
-  min-height: 90vh; /* Ajustado para dejar espacio para el header */
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,7 +134,7 @@ export default {
   background-color: $color-dark-background;
   padding: 4rem 2rem;
   position: relative;
-  overflow: hidden; // Para contener cualquier fondo animado si lo añadimos
+  overflow: hidden;
 }
 
 .hero-content {
@@ -154,17 +153,17 @@ export default {
 
 .hero-title {
   font-family: $font-heading;
-  font-size: 4.5rem; /* Tamaño de fuente grande para impacto */
+  font-size: 4.5rem;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); // Sombra sutil para destacar
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 
   span {
-    color: $color-light-text; // Tu nombre en blanco/gris claro
+    color: $color-light-text;
   }
 
   .highlight {
-    color: $color-primary-accent; // El acento (coma o una parte del título) en rojo
+    color: $color-primary-accent;
   }
   .typed-text {
     color: $color-primary-accent;
@@ -209,12 +208,11 @@ export default {
 
 .hero-actions {
   display: flex;
-  gap: 1rem; // Espacio entre los botones
+  gap: 1rem;
   justify-content: center;
-  flex-wrap: wrap; // Para que los botones se envuelvan en móvil
+  flex-wrap: wrap;
 }
 
-/* Media Queries para Responsividad de la sección HERO */
 @media (max-width: 992px) {
   .hero-title {
     font-size: 3.8rem;
@@ -236,11 +234,11 @@ export default {
     font-size: 1.4rem;
   }
   .hero-actions {
-    flex-direction: column; // Botones apilados en móvil
+    flex-direction: column;
     gap: 1rem;
   }
   .btn {
-    width: 100%; // Botones de ancho completo
+    width: 100%;
     max-width: 300px;
     margin: 0 auto;
   }
@@ -261,26 +259,25 @@ export default {
 /* ESTILOS DE LA SECCIÓN DE SERVICIOS */
 .services-section {
   padding: 6rem 2rem;
-  background-color: $color-dark-background; // Mismo fondo oscuro
+  background-color: $color-dark-background;
   text-align: center;
-  border-top: 1px solid rgba($color-light-text, 0.1); // Separador sutil
+  border-top: 1px solid rgba($color-light-text, 0.1);
 }
 
 .section-title {
   font-family: $font-heading;
   font-size: 3rem;
-  color: $color-primary-accent; // Títulos de sección en rojo
+  color: $color-primary-accent;
   margin-bottom: 4rem;
   position: relative;
-  display: inline-block; // Para centrar el underline si lo añadimos
+  display: inline-block;
 
   &:after {
-    // Pequeña línea debajo del título de la sección
     content: "";
     display: block;
     width: 80px;
     height: 4px;
-    background-color: $color-light-text; // Línea en blanco/gris claro
+    background-color: $color-light-text;
     margin: 10px auto 0;
     border-radius: 2px;
   }
@@ -291,11 +288,10 @@ export default {
   grid-template-columns: repeat(
     auto-fit,
     minmax(300px, 1fr)
-  ); // Grid responsivo
-  gap: 3rem; // Espacio entre los ítems
+  );
+  gap: 3rem;
 }
 
-/* Media Queries para responsividad de la sección de servicios */
 @media (max-width: 992px) {
   .services-section {
     padding: 4rem 2rem;
@@ -318,24 +314,22 @@ export default {
     margin-bottom: 2.5rem;
   }
   .services-grid {
-    grid-template-columns: 1fr; // Una columna en móvil
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 }
 
-/* ESTILOS DE LA SECCIÓN DE PROYECTOS */
 .projects-section {
   padding: 6rem 2rem;
   background-color: darken(
     $color-dark-background,
     2%
-  ); // Un negro ligeramente más oscuro para contrastar
+  );
   text-align: center;
-  border-top: 1px solid rgba($color-light-text, 0.1); // Separador sutil
+  border-top: 1px solid rgba($color-light-text, 0.1);
 }
 
 .section-title {
-  // Reutilizamos los estilos del título de sección de servicios
   font-family: $font-heading;
   font-size: 3rem;
   color: $color-primary-accent;
@@ -359,15 +353,14 @@ export default {
   grid-template-columns: repeat(
     auto-fit,
     minmax(320px, 1fr)
-  ); // Grid responsivo para proyectos
-  gap: 3rem; // Espacio entre las tarjetas
+  );
+  gap: 3rem;
   margin-bottom: 4rem;
 }
 
 .view-all-projects {
   text-align: center;
   .btn {
-    // Usamos los estilos de botón ya definidos
     padding: 1rem 3rem;
     font-size: 1.2rem;
     i {
@@ -380,7 +373,6 @@ export default {
   }
 }
 
-/* Media Queries para responsividad de la sección de proyectos */
 @media (max-width: 992px) {
   .projects-section {
     padding: 4rem 2rem;
@@ -403,7 +395,7 @@ export default {
     margin-bottom: 2.5rem;
   }
   .projects-grid {
-    grid-template-columns: 1fr; // Una columna en móvil
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
   .view-all-projects .btn {

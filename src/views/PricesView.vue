@@ -345,12 +345,10 @@ export default {
       emailSubject: "",
       predefinedEmailMessage: "",
       whatsappPhoneNumber: "573219177602",
-      exchangeRateUsdToCop: 0, // Mantenemos esto para los cálculos, pero no se muestra directamente
-      // Quitamos isLoadingRate y rateError ya que no se usarán en la UI
+      exchangeRateUsdToCop: 0,
     };
   },
   mounted() {
-    // Aún cargamos la tasa para que los cálculos en COP sean lo más actual posible
     this.fetchExchangeRate();
   },
   methods: {
@@ -369,7 +367,6 @@ export default {
       this.isEmailModalVisible = true;
     },
     async fetchExchangeRate() {
-      // Simplificamos la lógica de la API ya que no hay estados de carga/error visibles
       try {
         const response = await axios.get(
           "https://api.frankfurter.app/latest?from=USD&to=COP"
@@ -382,24 +379,20 @@ export default {
             this.exchangeRateUsdToCop
           );
         } else {
-          // Si la respuesta no es la esperada, usamos un valor por defecto
           console.warn(
             "Datos de tasa de cambio inesperados. Usando valor por defecto."
           );
-          this.exchangeRateUsdToCop = 4000; // Valor de respaldo
+          this.exchangeRateUsdToCop = 4000; 
         }
       } catch (error) {
         console.error("Error al obtener la tasa de cambio:", error);
-        // En caso de error de red o API, usamos el valor de respaldo
         this.exchangeRateUsdToCop = 4000;
       }
     },
     convertUsdToCop(usdAmount) {
-      // El cálculo sigue siendo dinámico aunque el aviso sea estático
       return usdAmount * this.exchangeRateUsdToCop;
     },
     formatCurrency(amount, currencyCode = "COP") {
-      // Esta función es para las cantidades de los precios, redondeando COP a cero decimales
       const options = {
         style: "currency",
         currency: currencyCode,
@@ -409,7 +402,6 @@ export default {
       const locale = currencyCode === "COP" ? "es-CO" : "en-US";
       return new Intl.NumberFormat(locale, options).format(amount);
     },
-    // Se elimina la función formatExchangeRate ya que no se usa para mostrar la tasa directamente
   },
 };
 </script>
@@ -451,9 +443,8 @@ export default {
   max-width: 800px;
   margin: 0 auto 2rem;
   line-height: 1.7;
-  // Añadimos estilos para el texto en negrita dentro del párrafo si no se ven por defecto
   strong {
-    color: $color-light-text; // Para que resalte un poco más que el texto normal
+    color: $color-light-text;
     font-weight: bold;
   }
 }
@@ -668,8 +659,6 @@ export default {
     }
   }
 }
-
-/* Media Queries */
 @media (max-width: 992px) {
   .prices-grid {
     grid-template-columns: 1fr;

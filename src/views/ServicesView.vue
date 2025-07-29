@@ -68,12 +68,12 @@
 </template>
 
 <script>
-import ServiceItem from "@/components/ServiceItem.vue"; // Importa el componente ServiceItem
+import ServiceItem from "@/components/ServiceItem.vue";
 
 export default {
   name: "ServicesView",
   components: {
-    ServiceItem, // Registra el componente
+    ServiceItem, 
   },
 };
 </script>
@@ -85,7 +85,7 @@ export default {
   padding: 6rem 2rem;
   background-color: $color-dark-background;
   color: $color-light-text;
-  min-height: 85vh; // Asegura que tenga altura suficiente para el footer
+  min-height: 85vh;
   text-align: center;
 }
 
@@ -96,7 +96,7 @@ export default {
   margin-bottom: 2rem;
   position: relative;
   display: inline-block;
-  width: 100%; // Para centrar el after
+  width: 100%;
 
   &:after {
     content: "";
@@ -120,10 +120,9 @@ export default {
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem; // Espacio entre las tarjetas de servicio
+  gap: 3rem;
 }
 
-/* Media Queries para responsividad */
 @media (max-width: 992px) {
   .services-page-section {
     padding: 4rem 2rem;
@@ -149,7 +148,7 @@ export default {
     margin-bottom: 2rem;
   }
   .services-grid {
-    grid-template-columns: 1fr; // Una columna en móvil
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 }

@@ -205,7 +205,6 @@ export default {
       }
     },
     onTechnologyChange() {
-      // No hace falta lógica extra, v-model se encarga
     },
     clearFilters() {
       this.currentTechnologies = [];
@@ -341,7 +340,6 @@ export default {
   margin-bottom: 0.2rem;
   cursor: pointer;
   position: relative;
-  // Ocultar el checkbox nativo
   input[type="checkbox"] {
     opacity: 0;
     width: 0;
